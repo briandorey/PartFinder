@@ -33,4 +33,4 @@ This will need the appropriate permissions for the IIS/User account on your serv
 
 ### About
 
-More details about this web application can be found on my blog at https://www.briandorey.com/
+More details about this web application can be found on my blog at https://www.briandorey.com/post/partfinder-component-inventory-manager
