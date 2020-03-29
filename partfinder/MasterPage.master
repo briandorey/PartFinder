@@ -1,0 +1,171 @@
+﻿<%@ Master Language="C#" %>
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Helpers.QueryStringIsNotNull("mode"))
+        {
+            switch (Request.QueryString["mode"].ToString().CleanString())
+            {
+                case "add":
+                    LitStatus.Text = "<div class=\"alert alert-success\" role=\"alert\">Your item has been added.</div>";
+                    break;
+                case "update":
+                    LitStatus.Text = "<div class=\"alert alert-success\" role=\"alert\">Your changes have been saved.</div>";
+                    break;
+                case "delete":
+                    LitStatus.Text = "<div class=\"alert alert-success\" role=\"alert\">Your item has been deleted.</div>";
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Brian Dorey www.briandorey.com">
+    <title></title>
+    <link href="/css/layout.min.css" rel="stylesheet">
+    <link href="/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="page-top" class="sidebar-toggled">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav sidebar sidebar-light bg-white accordion" id="accordionSidebar">
+            <!-- Sidebar - Logo -->
+            <li>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/default.aspx">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                        <i class="fa fa-microchip"></i>
+                    </div>
+                    <div class="sidebar-brand-text mx-3">Part Finder</div>
+                </a>
+            </li>
+            <!-- Sidebar - Logo -->
+
+            <li class="nav-item">
+                <a class="nav-link" href="/default.aspx">
+                    <i class="fa fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/parts/default.aspx">
+                    <i class="fa fa-fw fa-microchip"></i>
+                    <span>Parts</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/storage/default.aspx">
+                    <i class="fa fa-fw fa-box"></i>
+                    <span>Storage</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/manufacturers/default.aspx">
+                    <i class="fa fa-fw fa-industry"></i>
+
+                    <span>Manufacturers</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/footprints/default.aspx">
+                    <i class="fa fa-fw fa-shoe-prints"></i>
+                    <span>Footprints</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/files/">
+
+                    <i class="fa fa-fw fa-folder"></i>
+                    <span>Files</span></a>
+            </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-dark topbar mb-2 static-top">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <ul class="navbar-nav mr-auto">
+                        <li>
+                            <button class="btn btn-link mr-3 text-white" id="sidebarToggle"><i class="fa fa-bars"></i></button>
+                        </li>
+
+                        <li class="form-group has-search">
+                            <span class="fa fa-search form-control-search"></span>
+                            <form name="searchform" id="searchform" action="/search.aspx">
+                                <input type="text" class="form-control border-0" id="searchbox" name="searchbox" placeholder="Search">
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/admin/default.aspx" title="Admin">
+                                <i class="fas fa-cog fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/login.aspx?signout=true" title="Log Out">
+                                <i class="fas fa-sign-out-alt  fa-fw"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Begin Page Content -->
+                <form id="form1" name="form1" runat="server">
+
+                    <div class="container-fluid">
+                        
+                        <div class="row border-bottom mb-3">
+                            <div class="col-12 mb-1 ">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb arr-right">
+                                        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                        <asp:ContentPlaceHolder ID="ContentPlaceHolderHeader" runat="server">
+                                        </asp:ContentPlaceHolder>
+                                    </ol>
+                                </nav>
+                                <asp:Literal ID="LitStatus" runat="server"></asp:Literal>
+                            </div>
+                        </div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin-2.min.js"></script>
+    <asp:ContentPlaceHolder ID="FooterScripts" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+
+</html>
