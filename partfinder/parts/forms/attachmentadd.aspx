@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" %>
+<%@ Page Language="C#" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Import Namespace="System.IO" %>
@@ -40,17 +40,15 @@
                 {
                     string fileExt = Path.GetExtension(file.FileName).ToLower();
                     // cleanup filename
-                    string FfileName = fileName.ToLower().Replace(" ", "-").CleanString();
+                    string FfileName = fileName.ToLower().Replace(" ", "-");
+
+                    FfileName = Regex.Replace(FfileName, @"[^a-zA-Z0-9_. ]+", "");
                     long fsize = file.ContentLength;
                     MIMEType = fileExt.ToUpper().Replace(".","");
-
-                    FfileName = FfileName.Replace("&", "");
 
                     if (FfileName.Length > 30) {
                         FfileName = FfileName.Left(30) + "." + fileExt;
                     }
-
-
 
                     if (fsize <= 0)
                     {
