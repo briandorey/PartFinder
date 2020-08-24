@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Web;
 using System.Web.UI.WebControls;
 using System.Globalization;
@@ -58,7 +58,7 @@ public static class Helpers
     }
     public static bool TextBoxIsDouble(TextBox key)
     {
-        if (key.Text != null && key.Text.Length < 1)
+        if (key.Text != null && key.Text.Length > 0)
         {
             double d;
             if (Double.TryParse(key.Text.ToString(), out d)) // if done, then is a number
@@ -73,24 +73,24 @@ public static class Helpers
         return false;
     }
     public static bool TextBoxIsInt(TextBox key)
-    {
-        if (key.Text != null && key.Text.Length < 1)
         {
-            int d;
-            if (Int32.TryParse(key.Text.ToString(), out d)) // if done, then is a number
+            if (key.Text != null && key.Text.Length > 0)
             {
-                return true;
+                int d;
+                if (Int32.TryParse(key.Text.ToString(), out d)) // if done, then is a number
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
-            {
-                return false;
-            }
-        }
-        return false;
+            return false;
     }
     public static bool TextBoxIsEmail(TextBox key)
     {
-        if (key.Text != null && key.Text.Length < 1)
+        if (key.Text != null && key.Text.Length > 1)
         {
             IsValidEmail(key.Text.ToString());
         }
