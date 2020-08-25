@@ -193,5 +193,18 @@ public static class Helpers
     {
         return Regex.Replace(inval, @"[^A-Za-z0-9]+", "").ToLower().Replace(" ", "-");
     }
+    
+     public static void DoLog(string strMsg)
+        {
+            string filename = System.Web.HttpContext.Current.Server.MapPath("\\changelog.txt");
+    
+           
+            FileStream fs = new FileStream(filename, FileMode.Append, FileAccess.Write, FileShare.Write);
+            fs.Close();
+            StreamWriter sw = new StreamWriter(filename, true, Encoding.ASCII);
+            sw.Write(System.Environment.NewLine + DateTime.Now.ToString() + "," + strMsg);
+            sw.Close();
+    
+    }
 
 }

@@ -109,6 +109,7 @@
                         cmd.ExecuteNonQuery();
                     }
                 }
+                Helpers.DoLog(PartName.Text + " - Quantity: " + StockLevel.Text);
                 Response.Redirect("done.aspx?mode=update");
             }
             else
