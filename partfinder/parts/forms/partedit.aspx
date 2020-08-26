@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" %>
+﻿<%@ Page Language="C#" EnableSessionState="true" %>
 
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
@@ -46,6 +46,8 @@
                                 StorageLocationID.SelectedIndex = StorageLocationID.Items.IndexOf(StorageLocationID.Items.FindByValue(dt.Rows[0]["StorageLocationID"].ToString()));
                                 MPN.Text = dt.Rows[0]["MPN"].ToString();
                                 BarCode.Text = dt.Rows[0]["BarCode"].ToString();
+
+                                Session["CurrentStockLevel"] = dt.Rows[0]["StockLevel"].ToString();
                             }
                             else
                             {
@@ -76,6 +78,12 @@
                 DoSave = false;
                 ErrorMessage += "<p>Please enter the stock level.</p>";
             }
+            if (!Helpers.TextBoxIsInt(StockLevel))
+            {
+                DoSave = false;
+                ErrorMessage += "<p>Please enter the stock level as a number.</p>";
+            }
+
             if (Helpers.TextBoxIsNull(MinStockLevel))
             {
                 DoSave = false;
@@ -108,7 +116,34 @@
                         cmd.Parameters.AddWithValue("@PartPkey", Helpers.QueryStringReturnNumber("id"));
                         cmd.ExecuteNonQuery();
                     }
+
+                    if (Session["CurrentStockLevel"] != null && Session["CurrentStockLevel"].ToString().Length > 0)
+                    {
+                        // check old and new stock levels are both numbers.
+                        bool res, res2;
+                        int IntOldStockLevel;
+                        res = int.TryParse(Session["CurrentStockLevel"].ToString(), out IntOldStockLevel);
+                        int NewOldStockLevel;
+                        res2 = int.TryParse(StockLevel.Text.ToString(), out NewOldStockLevel);
+
+                        if (res  && res2)
+                        {
+                            if (IntOldStockLevel != NewOldStockLevel)
+                            {
+                                // stock level has changed, save into history table.
+
+                                using (SqlCommand cmd = new SqlCommand("INSERT INTO PartStockLevelHistory ([PartPkey] ,[StockLevel] ,[DateChanged]) VALUES (@PartPkey ,@StockLevel, @DateChanged)", conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@PartPkey", Helpers.QueryStringReturnNumber("id"));
+                                    cmd.Parameters.AddWithValue("@StockLevel", StockLevel.Text);
+                                    cmd.Parameters.AddWithValue("@DateChanged", DateTime.Now);
+                                    cmd.ExecuteNonQuery();
+                                }
+                            }
+                        }
+                    }
                 }
+
                 Helpers.DoLog(PartName.Text + " - Quantity: " + StockLevel.Text);
                 Response.Redirect("done.aspx?mode=update");
             }
@@ -165,6 +200,11 @@
                     using (SqlCommand cmd = new SqlCommand("DELETE FROM PartSuppliers WHERE PartID=@PartID", conn))
                     {
                         cmd.Parameters.AddWithValue("@PartID", Helpers.QueryStringReturnNumber("id"));
+                        cmd.ExecuteNonQuery();
+                    }
+                    using (SqlCommand cmd = new SqlCommand("DELETE FROM PartStockLevelHistory WHERE PartPkey=@PartPkey", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@PartPkey", Helpers.QueryStringReturnNumber("id"));
                         cmd.ExecuteNonQuery();
                     }
                 }

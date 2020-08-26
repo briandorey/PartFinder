@@ -295,6 +295,41 @@
             <!-- start card -->
             <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h4 class="card-title">Stock Level Change History</h4>
+                  
+                </div>
+                <div class="card-body ">
+                    <!-- start content -->
+                    <table class="table border-bottom">
+                        <tr>
+                            <th>Date</th>
+                            <th>Stock Level</th>
+                        </tr>
+                        <asp:ListView ID="ListViewStockLevel" runat="server" DataSourceID="SqlDataSourceStockChanges">
+                            <ItemTemplate>
+                                <tr>
+                                    <td><%# DateTime.Parse(Eval("DateChanged").ToString()).ToString("dd/MM/yyyy HH:mm") %></td>
+                                    <td><%# Eval("StockLevel") %></td>
+
+                                </tr>
+                            </ItemTemplate>
+                        </asp:ListView>
+                    </table>
+                    <div class="text-center">
+                    <asp:DataPager ID="it" runat="server" QueryStringField="page" PagedControlID="ListViewStockLevel" PageSize="5" class="btn-group btn-group-sm" >
+                                <Fields>
+                                    <asp:NumericPagerField ButtonType="Link" CurrentPageLabelCssClass="btn btn-primary rounded-0" RenderNonBreakingSpacesBetweenControls="false" 
+                                        NumericButtonCssClass="btn btn-outline-primary rounded-0" ButtonCount="10" NextPageText="..." NextPreviousButtonCssClass="btn btn-default rounded-0" />
+                                </Fields>
+                            </asp:DataPager></div>
+                    <!-- end content -->
+                </div>
+            </div>
+            <!-- end card -->
+
+            <!-- start card -->
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h4 class="card-title">Duplicate Part</h4>
                 </div>
                 <div class="card-body">
@@ -332,6 +367,14 @@
             <asp:QueryStringParameter DefaultValue="0" Name="PartID" QueryStringField="id" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
+
+    <asp:SqlDataSource ID="SqlDataSourceStockChanges" runat="server" ConnectionString="<%$ ConnectionStrings:MainConn %>" SelectCommand="SELECT * FROM PartStockLevelHistory WHERE (PartPkey = @PartPkey) ORDER BY DateChanged ASC">
+        <SelectParameters>
+            <asp:QueryStringParameter DefaultValue="0" Name="PartPkey" QueryStringField="id" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+
+    
     <!-- Modal -->
     <div class="modal fade" id="ModalOverlay" tabindex="-1" role="dialog" aria-labelledby="ModalOverlay" aria-hidden="true">
         <div class="modal-dialog rounded" role="document">

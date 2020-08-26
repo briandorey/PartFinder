@@ -3,6 +3,8 @@ using System.Web;
 using System.Web.UI.WebControls;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.IO;
+using System.Text;
 
 /// <summary>
 /// Summary description for Helpers

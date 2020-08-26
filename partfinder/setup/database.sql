@@ -162,6 +162,20 @@ GO
 ALTER TABLE [Footprint] ADD  CONSTRAINT [DF_Footprint_FootprintCategory]  DEFAULT ((0)) FOR [FootprintCategory]
 GO
 
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [PartStockLevelHistory](
+	[HistoryPkey] [int] IDENTITY(1,1) NOT NULL,
+	[PartPkey] [int] NULL,
+	[StockLevel] [int] NULL,
+	[DateChanged] [datetime] NULL
+) ON [PRIMARY]
+GO
+
 
 
 SET IDENTITY_INSERT PartCategory ON
