@@ -35,6 +35,10 @@
 
                         cmd.ExecuteNonQuery();
                     }
+
+                    Helpers.DoLog("Manufacturer Added:" + ManufacturerName.Text);
+
+
                     System.IO.Directory.CreateDirectory(@Server.MapPath("\\docs\\" + ManufacturerName.Text.ToString().DirectoryName()));
                 }
                 Response.Redirect("default.aspx?mode=add");

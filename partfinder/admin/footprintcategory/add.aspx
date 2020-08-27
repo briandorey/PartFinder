@@ -37,6 +37,7 @@
                         cmd.ExecuteNonQuery();
                     }
                 }
+                Helpers.DoLog("Footprint Category Added:" + FCName.Text);
                 Response.Redirect("default.aspx?mode=add");
             }
             else

@@ -40,6 +40,7 @@
                         cmd.ExecuteNonQuery();
                     }
                 }
+                Helpers.DoLog("Storage Location Added:" + StorageName.Text);
                 Response.Redirect("default.aspx?mode=add");
             }
             else

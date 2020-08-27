@@ -44,6 +44,8 @@
                         cmd.ExecuteNonQuery();
                     }
                 }
+
+                Helpers.DoLog("Category Added:" + PCName.Text);
                 Response.Redirect("treeview.aspx?mode=add");
             }
             else

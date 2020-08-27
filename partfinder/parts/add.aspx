@@ -71,6 +71,7 @@
                         cmd.CommandText = "SELECT @@Identity FROM Parts";
                         Decimal iId = (decimal)cmd.ExecuteScalar();
 
+                        Helpers.DoLog("Part Added:" + PartName.Text);
                         Response.Redirect("view.aspx?id=" + iId.ToString());
                     }
                 }

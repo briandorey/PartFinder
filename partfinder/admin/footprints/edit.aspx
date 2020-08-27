@@ -92,6 +92,7 @@
                         cmd.ExecuteNonQuery();
                     }
                 }
+                Helpers.DoLog("Footprint Updated:" + FootprintName.Text);
                 Response.Redirect("default.aspx?mode=update");
             } else
             {

@@ -144,7 +144,7 @@
                     }
                 }
 
-                Helpers.DoLog(PartName.Text + " - Quantity: " + StockLevel.Text);
+                Helpers.DoLog("Part Updated: " + PartName.Text);
                 Response.Redirect("done.aspx?mode=update");
             }
             else

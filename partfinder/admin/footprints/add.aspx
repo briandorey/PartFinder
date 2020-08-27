@@ -39,6 +39,7 @@
                         cmd.ExecuteNonQuery();
                     }
                 }
+                Helpers.DoLog("Footprint Added:" + FootprintName.Text);
                 Response.Redirect("default.aspx?mode=add");
             }
             else

@@ -100,6 +100,7 @@
                         cmd.ExecuteNonQuery();
                     }
                 }
+                Helpers.DoLog("Category Updated:" + PCName.Text);
                 Response.Redirect("treeview.aspx?mode=update");
             } else
             {

@@ -102,6 +102,7 @@
                         cmd.ExecuteNonQuery();
                     }
                 }
+                Helpers.DoLog("Footprint Category Updated:" + FCName.Text);
                 Response.Redirect("default.aspx?mode=update");
             } else
             {

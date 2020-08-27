@@ -92,6 +92,8 @@
                         cmd.ExecuteNonQuery();
                     }
                 }
+
+                Helpers.DoLog("Storage Location Updated:" + StorageName.Text);
                 Response.Redirect("default.aspx?mode=update");
             }
             else

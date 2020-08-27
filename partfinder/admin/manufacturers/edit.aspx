@@ -91,6 +91,7 @@
                         cmd.ExecuteNonQuery();
                     }
                 }
+                Helpers.DoLog("Manufacturer Updated:" + ManufacturerName.Text);
                 Response.Redirect("default.aspx?mode=update");
             }
             else
