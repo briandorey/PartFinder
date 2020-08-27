@@ -20,6 +20,7 @@
                 <div class="card-header d-flex flex-row align-items-center justify-content-between">
                     <h4 class="card-title">Parts</h4>
                     <div>
+                        <a href="export.aspx" class="mr-3" title="Export"><i class="fas fa-file-csv mr-1"></i></a>
                         <a href="default.aspx" class="mr-3" title="Tree View"><i class="fas fa-stream mr-1"></i></a>
                         <a href="add.aspx" title="Add new"><i class="fas fa-plus mr-1"></i></a>
                     </div>
