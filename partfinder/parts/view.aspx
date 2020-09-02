@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" %>
 
 <script runat="server">
     protected void Page_Load(Object Src, EventArgs E)
@@ -14,7 +14,6 @@
                 // LitPartFootprintID.Text = drvSql["PartFootprintID"].ToString();
                 // LitPartManID.Text = drvSql["PartManID"].ToString();
                 LitPartName.Text = drvSql["PartName"].ToString();
-
                 LitPartDescription.Text = drvSql["PartDescription"].ToString();
                 LitPartComment.Text = drvSql["PartComment"].ToString();
                 LitStockLevel.Text = drvSql["StockLevel"].ToString();
@@ -23,7 +22,6 @@
                 LitDateCreated.Text = drvSql["DateCreated"].ToString().DoDateFormat();
                 LitDateUpdated.Text = drvSql["DateUpdated"].ToString().DoDateFormat();
                 LitCondition.Text = Helpers.GetCondition(drvSql["Condition"].ToString());
-
                 LitManufacturerName.Text = drvSql["ManufacturerName"].ToString();
                 LitFootprintName.Text = drvSql["FootprintName"].ToString();
                 LitFootprintImage.Text = CheckImage(drvSql["FootprintImage"].ToString());
@@ -40,7 +38,6 @@
             Response.Redirect("/parts/default.aspx?mode=delete");
         }
     }
-
      public string CheckImage(string inval)
     {
         if (inval.Trim().Length > 0)
@@ -59,18 +56,15 @@
         .modal {
             padding: 0 !important;
         }
-
         .modal-dialog {
             max-width: 80% !important;
             height: 80%;
             padding: 0;
             margin: 5% 10% 0 10%;
         }
-
         .modal-content {
             height: 100%;
         }
-
         #TargetFrame {
             width: 100%;
             height: 100%;
@@ -127,7 +121,7 @@
                             </p>
                             <p>
                                 <strong>Price:</strong><br />
-                                &pound;<asp:Literal ID="LitPrice" runat="server"></asp:Literal>
+                                $<asp:Literal ID="LitPrice" runat="server"></asp:Literal>
                             </p>
 
                         </div>
@@ -304,12 +298,14 @@
                         <tr>
                             <th>Date</th>
                             <th>Stock Level</th>
+                            <th>User</th>
                         </tr>
                         <asp:ListView ID="ListViewStockLevel" runat="server" DataSourceID="SqlDataSourceStockChanges">
                             <ItemTemplate>
                                 <tr>
-                                    <td><%# DateTime.Parse(Eval("DateChanged").ToString()).ToString("dd/MM/yyyy HH:mm") %></td>
+                                    <td><%# DateTime.Parse(Eval("DateChanged").ToString()).ToString("MM/dd/yyyy - hh:mm tt") %></td>
                                     <td><%# Eval("StockLevel") %></td>
+                                    <td><%#Eval("Name") %></td>
 
                                 </tr>
                             </ItemTemplate>
@@ -398,14 +394,11 @@
 
     <script>
         function LoadModal(url, modaltitle) {
-
             $('#ModalOverlayTitle').html(modaltitle);
             var $iframe = $('#TargetFrame');
             if ($iframe.length) {
                 $iframe.attr('src', '/parts/forms/' + url);    // here you can change src
-
             }
-
             $('#ModalOverlay').modal('show')
         }
         window.closeModal = function () {
@@ -414,4 +407,3 @@
         };
     </script>
 </asp:Content>
-
