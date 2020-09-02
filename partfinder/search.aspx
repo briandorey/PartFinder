@@ -55,6 +55,9 @@
                                         <th>
                                             <asp:LinkButton runat="server" ID="LinkButton6" CommandName="Sort"
                                                 CommandArgument="PCName">Category</asp:LinkButton></th>
+                                        <th>
+                                            <asp:LinkButton runat="server" ID="LinkButton7" CommandName="Sort"
+                                                CommandArgument="Barcode">Barcode</asp:LinkButton></th>
 
                                     </tr>
                                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
@@ -68,6 +71,7 @@
                                         <td><%#Eval("ManufacturerName") %></td>
                                         <td><%#Eval("FootprintName") %></td>
                                         <td><%#Eval("PCName") %></td>
+                                        <td><%#Eval("BarCode") %></td>
 
                                     </tr>
                                 </ItemTemplate>
@@ -89,10 +93,11 @@
             </div>
         </div>
     </div>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MainConn %>" SelectCommand="SELECT * FROM [View_PartsData] WHERE PartName LIKE '%' + @PartName + '%' OR PartDescription LIKE '%' + @PartDescription + '%' ">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MainConn %>" SelectCommand="SELECT * FROM [View_PartsData] WHERE PartName LIKE '%' + @PartName + '%' OR PartDescription LIKE '%' + @PartDescription + '%' OR BarCode LIKE '%' + @BarCode + '%' ">
         <SelectParameters>
             <asp:QueryStringParameter DefaultValue="None" Name="PartName" QueryStringField="searchbox" Type="String" />
             <asp:QueryStringParameter DefaultValue="None" Name="PartDescription" QueryStringField="searchbox" Type="String" />
+            <asp:QueryStringParameter DefaultValue="None" Name="BarCode" QueryStringField="searchbox" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
 </asp:Content>
