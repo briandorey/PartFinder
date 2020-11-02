@@ -9,7 +9,7 @@
 
     // barcode scanner addon
     // Using android app from https://play.google.com/store/apps/details?id=no.winternet.barcodescannerterminal3
-    // set server url to be https://yourdomain.com/barcode/?code=%barcode%&id=%scannerID%&qty=%qty%
+    // set server url to be https://yourdomain.com/barcode/?data=%barcode%&id=%scannerID%&qty=%qty%
     // Enable number keypad on the app to enter new stock level before scanning barcode and updating the database.
     // Scanning without entering a stock level number will return the current stock level.
     // 
