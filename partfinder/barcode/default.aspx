@@ -9,12 +9,16 @@
 
     // barcode scanner addon
     // Using android app from https://play.google.com/store/apps/details?id=no.winternet.barcodescannerterminal3
-    // set server url to be https://yourdomain.com/barcode/?data=%barcode%&id=%scannerID%&qty=%qty%
+    // This app is purchased on an annual subscription model
+    // This is the only app found so far which allows posting to a remote server
+    // set server url to be https://yourdomain.com/barcode/?data=%barcode%&id=%scannerID%&qty=%qty%&mode=%scanpoint%
     // Enable number keypad on the app to enter new stock level before scanning barcode and updating the database.
+    // Enable "Use multiple scan points" to use add and subtact mode. Add &mode=%scanpoint% to the server url to use this function
     // Scanning without entering a stock level number will return the current stock level.
     // 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Helpers.DoLog(Request.QueryString.ToString());
         // check if scanner ID is valid
         if (CheckID())
         {
@@ -35,19 +39,47 @@
                                 if (Helpers.QueryStringIsNotNull("qty") && Request.QueryString["qty"].Length > 0)
                                 {
                                     int NewQuantity = Helpers.QueryStringReturnNumber("qty");
-
-
-                                    using (SqlCommand cmd = new SqlCommand("UPDATE Parts SET StockLevel=@StockLevel WHERE PartPkey=@PartPkey", conn))
+                                    int OldStockLevel = Int32.Parse(dt.Rows[0]["StockLevel"].ToString());
+                                    int SaveQuantity = NewQuantity;
+                                    Helpers.DoLog(Helpers.CleanQS("mode"));
+                                    // Check if "Use multiple scan points" mode is active
+                                    if ((Helpers.QueryStringIsNotNull("mode") && Request.QueryString["mode"].Length > 0) && (Helpers.QueryStringIsNotNull("qty") && Request.QueryString["qty"].Length > 0))
                                     {
-                                        cmd.Parameters.AddWithValue("@StockLevel", NewQuantity);
+                                        string UpdateMode = Helpers.CleanQS("mode");
 
-                                        cmd.Parameters.AddWithValue("@PartPkey", dt.Rows[0]["PartPkey"].ToString());
-                                        cmd.ExecuteNonQuery();
+
+                                        if (UpdateMode.Equals("in"))
+                                        {
+                                            SaveQuantity = OldStockLevel + NewQuantity;
+                                        } else
+                                        {
+                                            SaveQuantity = OldStockLevel - NewQuantity;
+                                        }
+
+                                        using (SqlCommand cmd = new SqlCommand("UPDATE Parts SET StockLevel=@StockLevel WHERE PartPkey=@PartPkey", conn))
+                                        {
+                                            cmd.Parameters.AddWithValue("@StockLevel", SaveQuantity);
+
+                                            cmd.Parameters.AddWithValue("@PartPkey", dt.Rows[0]["PartPkey"].ToString());
+                                            cmd.ExecuteNonQuery();
+                                        }
+
+                                    } else {
+
+
+                                        using (SqlCommand cmd = new SqlCommand("UPDATE Parts SET StockLevel=@StockLevel WHERE PartPkey=@PartPkey", conn))
+                                        {
+                                            cmd.Parameters.AddWithValue("@StockLevel", SaveQuantity);
+
+                                            cmd.Parameters.AddWithValue("@PartPkey", dt.Rows[0]["PartPkey"].ToString());
+                                            cmd.ExecuteNonQuery();
+                                        }
                                     }
+
 
                                     Response.Clear();
                                     Response.ContentType = "application/json; charset=utf-8";
-                                    Response.Write("{\"status\":\"ok\",\"result_msg\":\"Stock Level is now " + NewQuantity.ToString() + "\"}");
+                                    Response.Write("{\"status\":\"ok\",\"result_msg\":\"Stock Level is now " + SaveQuantity.ToString() + "\"}");
                                     Response.End();
                                 }
                                 else
