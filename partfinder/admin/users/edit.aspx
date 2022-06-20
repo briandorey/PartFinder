@@ -132,19 +132,19 @@
                 <div class="card-body">
                     <!-- start content -->
                     <asp:Literal ID="LitError" runat="server"></asp:Literal>
-   <div class="form-group required">
+   <div class="mb-3 required">
     <label for="<%= EmailAddress.ClientID %>">Email address</label>
        <asp:TextBox ID="EmailAddress" CssClass="form-control form-control-sm" runat="server" placeholder="Enter email" MaxLength="50" required></asp:TextBox>
     </div>
-    <div class="form-group required">
+    <div class="mb-3 required">
     <label for="<%= UserPass.ClientID %>">Password</label>
        <asp:TextBox ID="UserPass" TextMode="Password" CssClass="form-control form-control-sm" runat="server" placeholder="Enter password" MaxLength="250" required></asp:TextBox>
     </div>
-    <div class="form-group required">
+    <div class="mb-3 required">
     <label for="<%= UserPass2.ClientID %>">Confirm Password</label>
        <asp:TextBox ID="UserPass2" TextMode="Password" CssClass="form-control form-control-sm" runat="server" placeholder="Confirm password" required></asp:TextBox>
     </div>
-    <button runat="server" ID="Button1" class="btn btn-primary "><i class="fas fa-save mr-1"></i> Save</button>
+    <button runat="server" ID="Button1" class="btn btn-primary "><i class="fas fa-save me-1"></i> Save</button>
                      <!-- end content -->
                     </div>
         </div>
@@ -161,7 +161,7 @@
                 <div class="card-body">
                     <!-- start content -->
                     <p>Are you sure you want to delete this user?</p>
-                     <a href="edit.aspx?id=<%= Helpers.QueryStringReturnNumber("id") %>&delete=true"  ID="Button2" class="btn btn-danger  btn-sm"><i class="fas fa-save mr-1"></i> Delete</a>
+                     <a href="edit.aspx?id=<%= Helpers.QueryStringReturnNumber("id") %>&delete=true"  ID="Button2" class="btn btn-danger  btn-sm"><i class="fas fa-save me-1"></i> Delete</a>
                     <!-- end content -->
                     </div>
         </div>

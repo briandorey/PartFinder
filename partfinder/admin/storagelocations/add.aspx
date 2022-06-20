@@ -65,21 +65,21 @@
                 <div class="card-header d-flex flex-row align-items-center justify-content-between">
                     <h4 class="card-title">Add New Storage Location</h4>
                     <div>
-                    <a href="addgrid.aspx" title="Add Grid"><i class="fas fa-th mr-3"></i></a>
+                    <a href="addgrid.aspx" title="Add Grid"><i class="fas fa-th me-3"></i></a>
                     <a href="default.aspx" title="List View"><i class="fas fa-list"></i></a></div>
                 </div>
                 <div class="card-body">
                     <!-- start content -->
                     <asp:Literal ID="LitError" runat="server"></asp:Literal>
-                    <div class="form-group required">
+                    <div class="mb-3 required">
                         <label for="<%= StorageName.ClientID %>">Name</label>
                         <asp:TextBox ID="StorageName" CssClass="form-control form-control-sm" runat="server" placeholder="Enter name" MaxLength="50" required></asp:TextBox>
                     </div>
-                    <div class="form-group required">
+                    <div class="mb-3 required">
                         <label for="<%= StorageSortOrder.ClientID %>">Sort Order</label>
                         <asp:TextBox ID="StorageSortOrder" CssClass="form-control form-control-sm" runat="server" placeholder="0" MaxLength="10" required></asp:TextBox>
                     </div>
-                    <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save mr-1"></i>Save</button>
+                    <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save me-1"></i>Save</button>
                     <!-- end content -->
                 </div>
             </div>

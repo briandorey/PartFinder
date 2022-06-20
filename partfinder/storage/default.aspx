@@ -32,7 +32,7 @@
                                             <asp:LinkButton runat="server" ID="PCName" CommandName="Sort"
                                                 CommandArgument="StorageName">Name</asp:LinkButton></th>
 
-                                        <th class="text-right"></th>
+                                        <th class="text-end"></th>
                                     </tr>
                                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
                                 </LayoutTemplate>
@@ -41,7 +41,7 @@
                                         <td><%#Eval("StorageName") %></td>
 
 
-                                        <td class="text-right"><a href="/parts/listbystoragelocation.aspx?id=<%#Eval("StoragePkey") %>"><i class="fa fa-list text-primary fa-1x "></i>View Parts</a></td>
+                                        <td class="text-end"><a href="/parts/listbystoragelocation.aspx?id=<%#Eval("StoragePkey") %>"><i class="fa fa-list text-primary fa-1x "></i> View Parts</a></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:ListView>

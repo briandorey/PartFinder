@@ -38,7 +38,7 @@
         <div class="col-12 ">
             <div class="card mb-4">
                 <div class="card-header d-flex flex-row align-items-center justify-content-between">
-                    <h1 class="font-weight-light h3">
+                    <h1 class=" fw-light h3">
                         <asp:Literal ID="LitName" runat="server"></asp:Literal></h1>
                 </div>
                 <div class="card-body">
@@ -84,8 +84,8 @@
                     <h4 class="card-title">Parts: 
                     </h4>
                     <div>
-                        <a href="default.aspx" class="mr-3" title="Tree View"><i class="fas fa-stream mr-1"></i></a>
-                        <a href="add.aspx" title="Add new"><i class="fas fa-plus mr-1"></i></a>
+                        <a href="default.aspx" class="me-3" title="Tree View"><i class="fas fa-stream me-1"></i></a>
+                        <a href="add.aspx" title="Add new"><i class="fas fa-plus me-1"></i></a>
                     </div>
                 </div>
                 <div class="card-body p-0 pb-3">

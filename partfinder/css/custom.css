@@ -1,0 +1,18 @@
+﻿body {
+    font-family: Segoe UI,Roboto,Helvetica Neue,sans-serif;
+    color: #858796;
+}
+a { text-decoration: none;}
+
+th a { color: #000;}
+table {
+    font-size: 14px;
+}
+#layoutSidenav #layoutSidenav_content {
+    background-color: #f3f4fa;
+}
+.card-header {
+    background: #fff;
+    border-bottom: 1px;
+    border-top: 4px solid #858796;
+}

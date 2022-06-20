@@ -28,7 +28,7 @@ public class CategoryHelpers
     {
         using (DataSet ds = new DataSet())
         {
-            menu.Items.Add(new ListItem("Root", "0"));
+            //menu.Items.Add(new ListItem("Root", "0"));
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MainConn"].ConnectionString.ToString()))
             {
                 connection.Open();

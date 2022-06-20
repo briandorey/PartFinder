@@ -33,8 +33,8 @@
                     <h4 class="card-title">Storage Location: 
                         <asp:Literal ID="LitName" runat="server"></asp:Literal></h4>
                     <div>
-                        <a href="default.aspx" class="mr-3" title="Tree View"><i class="fas fa-stream mr-1"></i></a>
-                        <a href="add.aspx" title="Add new"><i class="fas fa-plus mr-1"></i></a>
+                        <a href="default.aspx" class="me-3" title="Tree View"><i class="fas fa-stream me-1"></i></a>
+                        <a href="add.aspx" title="Add new"><i class="fas fa-plus me-1"></i></a>
                     </div>
                 </div>
                 <div class="card-body">

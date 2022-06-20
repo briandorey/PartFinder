@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" %>
 
 <script runat="server">
     protected void Page_Load(Object Src, EventArgs E)
@@ -14,6 +14,7 @@
                 // LitPartFootprintID.Text = drvSql["PartFootprintID"].ToString();
                 // LitPartManID.Text = drvSql["PartManID"].ToString();
                 LitPartName.Text = drvSql["PartName"].ToString();
+
                 LitPartDescription.Text = drvSql["PartDescription"].ToString();
                 LitPartComment.Text = drvSql["PartComment"].ToString();
                 LitStockLevel.Text = drvSql["StockLevel"].ToString();
@@ -22,6 +23,7 @@
                 LitDateCreated.Text = drvSql["DateCreated"].ToString().DoDateFormat();
                 LitDateUpdated.Text = drvSql["DateUpdated"].ToString().DoDateFormat();
                 LitCondition.Text = Helpers.GetCondition(drvSql["Condition"].ToString());
+
                 LitManufacturerName.Text = drvSql["ManufacturerName"].ToString();
                 LitFootprintName.Text = drvSql["FootprintName"].ToString();
                 LitFootprintImage.Text = CheckImage(drvSql["FootprintImage"].ToString());
@@ -38,6 +40,7 @@
             Response.Redirect("/parts/default.aspx?mode=delete");
         }
     }
+
      public string CheckImage(string inval)
     {
         if (inval.Trim().Length > 0)
@@ -56,15 +59,18 @@
         .modal {
             padding: 0 !important;
         }
+
         .modal-dialog {
             max-width: 80% !important;
             height: 80%;
             padding: 0;
             margin: 5% 10% 0 10%;
         }
+
         .modal-content {
             height: 100%;
         }
+
         #TargetFrame {
             width: 100%;
             height: 100%;
@@ -87,12 +93,12 @@
                     
                     <div>
                        
-                        <a href="javascript:LoadModal('partedit.aspx?id=<%= Helpers.QueryStringReturnNumber("id") %>', 'Edit Part');" class=" ml-auto"><i class="fas fa-edit mr-1"></i></a>
+                        <a href="javascript:LoadModal('partedit.aspx?id=<%= Helpers.QueryStringReturnNumber("id") %>', 'Edit Part');" class=" ml-auto"><i class="fas fa-edit me-1"></i></a>
                     </div>
                 </div>
                 <div class="card-body">
                     <!-- start content -->
-                    <h1 class="mb-3 font-weight-light">
+                    <h1 class="mb-3  fw-light">
                         <asp:Literal ID="LitPartName" runat="server"></asp:Literal></h1>
                     <div class="row border-bottom pb-2 mb-3">
                         <div class="col-12 col-md-4">
@@ -121,7 +127,7 @@
                             </p>
                             <p>
                                 <strong>Price:</strong><br />
-                                $<asp:Literal ID="LitPrice" runat="server"></asp:Literal>
+                                &pound;<asp:Literal ID="LitPrice" runat="server"></asp:Literal>
                             </p>
 
                         </div>
@@ -203,8 +209,8 @@
                                             <%#Eval("ParamName") %>
                                         </td>
                                         <td><%#Eval("ParamValue") %></td>
-                                        <td class="text-right">
-                                            <a href="javascript:LoadModal('parameteredit.aspx?id=<%#Eval("PPpkey") %>', 'Edit Parameter');" title="Edit"><i class="fas fa-edit mr-1"></i></a></td>
+                                        <td class="text-end">
+                                            <a href="javascript:LoadModal('parameteredit.aspx?id=<%#Eval("PPpkey") %>', 'Edit Parameter');" title="Edit"><i class="fas fa-edit me-1"></i></a></td>
 
                                     </tr>
                                    
@@ -244,7 +250,7 @@
 
                                     <td><%#Eval("MIMEType") %></td>
                                     <td><%# Eval("DateCreated").ToString().DoDateFormat() %></td>
-                                    <td class="text-right">
+                                    <td class="text-end">
                                         <a href="javascript:LoadModal('attachmentdelete.aspx?id=<%#Eval("PApkey") %>', 'Delete Attachment');" title="Edit"><i class="fas fa-trash text-danger"></i></a></td>
 
                                 </tr>
@@ -275,7 +281,7 @@
                             <ItemTemplate>
                                 <tr>
                                     <td><a href="<%#Eval("URL") %>" target="_blank"><%#Eval("SupplierName") %></a></td>
-                                    <td class="text-right"><a href="javascript:LoadModal('supplieredit.aspx?id=<%#Eval("SupPkey") %>', 'Edit Supplier');" title="Edit"><i class="fas fa-edit mr-1"></i></a></td>
+                                    <td class="text-end"><a href="javascript:LoadModal('supplieredit.aspx?id=<%#Eval("SupPkey") %>', 'Edit Supplier');" title="Edit"><i class="fas fa-edit me-1"></i></a></td>
 
                                 </tr>
                             </ItemTemplate>
@@ -298,14 +304,12 @@
                         <tr>
                             <th>Date</th>
                             <th>Stock Level</th>
-                            <th>User</th>
                         </tr>
                         <asp:ListView ID="ListViewStockLevel" runat="server" DataSourceID="SqlDataSourceStockChanges">
                             <ItemTemplate>
                                 <tr>
-                                    <td><%# DateTime.Parse(Eval("DateChanged").ToString()).ToString("MM/dd/yyyy - hh:mm tt") %></td>
+                                    <td><%# DateTime.Parse(Eval("DateChanged").ToString()).ToString("dd/MM/yyyy HH:mm") %></td>
                                     <td><%# Eval("StockLevel") %></td>
-                                    <td><%#Eval("Name") %></td>
 
                                 </tr>
                             </ItemTemplate>
@@ -332,7 +336,7 @@
                     <!-- start content -->
                     <p>To create a duplicate of this part, click the button below:</p>
                     <p class="text-center mb-0">
-                     <a href="duplicate.aspx?id=<%= Helpers.QueryStringReturnNumber("id") %>" title="Duplicate Part" class="btn btn-sm btn-secondary "><i class="fas fa-copy mr-1 text-white"></i> Duplicate</a></p>
+                     <a href="duplicate.aspx?id=<%= Helpers.QueryStringReturnNumber("id") %>" title="Duplicate Part" class="btn btn-sm btn-secondary "><i class="fas fa-copy me-1 text-white"></i> Duplicate</a></p>
                     <!-- end content -->
                 </div>
             </div>
@@ -372,17 +376,33 @@
 
     
     <!-- Modal -->
-    <div class="modal fade" id="ModalOverlay" tabindex="-1" role="dialog" aria-labelledby="ModalOverlay" aria-hidden="true">
+    <div class="modal" tabindex="-1"  id="ModalOverlay"  role="dialog" aria-labelledby="ModalOverlay" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"  id="ModalOverlayTitle">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <iframe id="TargetFrame"></iframe>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+    <div class="modal fade">
         <div class="modal-dialog rounded" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ModalOverlayTitle">Modal title</h5>
+                    <h5 class="modal-title" id="ModalOverlayTitlea">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <iframe id="TargetFrame"></iframe>
+                    
                 </div>
 
             </div>
@@ -394,11 +414,14 @@
 
     <script>
         function LoadModal(url, modaltitle) {
+
             $('#ModalOverlayTitle').html(modaltitle);
             var $iframe = $('#TargetFrame');
             if ($iframe.length) {
                 $iframe.attr('src', '/parts/forms/' + url);    // here you can change src
+
             }
+
             $('#ModalOverlay').modal('show')
         }
         window.closeModal = function () {
@@ -407,3 +430,4 @@
         };
     </script>
 </asp:Content>
+

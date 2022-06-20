@@ -20,15 +20,15 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> 
     <div class="row mb-3">
         <div class="col-12 col-md-8"><p>The Categories section allows you to manage the item categories.</p></div>
-        <div class="col-12 col-md-4 text-right"></div>
+        <div class="col-12 col-md-4 text-end"></div>
       
     <div class="col-12 ">
     <div class="card mb-4">
               <div class="card-header d-flex flex-row align-items-center justify-content-between">
                   <h4 class="card-title">Categories</h4>
                   <div>
-                 <a href="default.aspx" class="mr-3" title="List View"><i class="fas fa-list"></i></a>
-                    <a href="add.aspx"  class="ml-auto" title="Add new"><i class="fa fa-plus mr-2"></i></a>
+                 <a href="default.aspx" class="me-3" title="List View"><i class="fas fa-list"></i></a>
+                    <a href="add.aspx"  class="ml-auto" title="Add new"><i class="fa fa-plus me-2"></i></a>
                 </div>
                   </div>
                 <div class="card-body">

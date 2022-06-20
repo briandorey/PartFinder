@@ -35,7 +35,7 @@
                 <th><asp:LinkButton runat="server" ID="LinkButton2" CommandName="Sort"
                      CommandArgument="ManufacturerPhone">Phone</asp:LinkButton></th>
                
-                <th class="text-right"></th>
+                <th class="text-end"></th>
             </tr>
          <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
    </LayoutTemplate>
@@ -46,7 +46,7 @@
                <td><%#Eval("ManufacturerPhone") %></td>
               
                
-             <td class="text-right"><a href="/parts/listbymanufacturer.aspx?id=<%#Eval("mpkey") %>" ><i class="fa fa-list text-primary fa-1x "></i> View Parts</a></td>
+             <td class="text-end"><a href="/parts/listbymanufacturer.aspx?id=<%#Eval("mpkey") %>" ><i class="fa fa-list text-primary fa-1x "></i> View Parts</a></td>
             </tr>
         </ItemTemplate>
     </asp:ListView>

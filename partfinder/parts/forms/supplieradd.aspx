@@ -54,7 +54,8 @@
     <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="/css/layout.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/custom.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -65,17 +66,17 @@
                     <!-- start content -->
                     <asp:Literal ID="LitError" runat="server"></asp:Literal>
                    
-                    <div class="form-group">
+                    <div class="mb-3">
                         <label for="<%= SupplierName.ClientID %>">Name</label>
                         <asp:TextBox ID="SupplierName" CssClass="form-control form-control-sm" runat="server" placeholder="Name" MaxLength="250" required></asp:TextBox>
                       
                     </div>
-                    <div class="form-group">
+                    <div class="mb-3">
                         <label for="<%= URL.ClientID %>">URL</label>
                         <asp:TextBox ID="URL" CssClass="form-control form-control-sm" runat="server" Text="https://" MaxLength="250" required></asp:TextBox>
                     </div>
 
-                    <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save mr-1"></i>Save</button>
+                    <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save me-1"></i>Save</button>
                     <!-- end content -->
                </div>
     </div>

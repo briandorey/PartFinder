@@ -106,11 +106,11 @@
                 var di = new DirectoryInfo(directory);
 
                 if (FullUrl.Equals("\\" + di.FullName.Replace(BasePath, ""))) {
-                    sb.AppendFormat("    <li><a href=\"default.aspx?d=\\" + di.FullName.Replace(BasePath, "") + "\"  data=\""  + di.FullName.Replace(BasePath,"") + "\"><i class=\"fa fa-folder-open fa-lg mr-2 text-dark\" aria-hidden=\"true\"></i><strong class=\"text-dark\">{0}</strong></a>", di.Name);
+                    sb.AppendFormat("    <li><a href=\"default.aspx?d=\\" + di.FullName.Replace(BasePath, "") + "\"  data=\""  + di.FullName.Replace(BasePath,"") + "\"><i class=\"fa fa-folder-open fa-lg me-2 text-dark\" aria-hidden=\"true\"></i><strong class=\"text-dark\">{0}</strong></a>", di.Name);
                 }
                 else
                 {
-                    sb.AppendFormat("    <li><a href=\"default.aspx?d=\\" + di.FullName.Replace(BasePath, "") + "\" data=\""  + di.FullName.Replace(BasePath,"") + "\"><i class=\"fa fa-folder fa-lg mr-2\" aria-hidden=\"true\"></i>{0}</a>", di.Name);
+                    sb.AppendFormat("    <li><a href=\"default.aspx?d=\\" + di.FullName.Replace(BasePath, "") + "\" data=\""  + di.FullName.Replace(BasePath,"") + "\"><i class=\"fa fa-folder fa-lg me-2\" aria-hidden=\"true\"></i>{0}</a>", di.Name);
                 }
 
 
@@ -614,8 +614,8 @@
                     <div class=" form-inline">
 
                        
-                    <label class="mr-sm-2" for="SectionName">Add Folder</label>
-                    <asp:TextBox ID="SectionName" CssClass="form-control form-control-sm mb-2 mr-sm-2 mb-sm-0" MaxLength="50" TextMode="SingleLine" runat="server" Wrap="false" />
+                    <label class="me-sm-2" for="SectionName">Add Folder</label>
+                    <asp:TextBox ID="SectionName" CssClass="form-control form-control-sm mb-2 me-sm-2 mb-sm-0" MaxLength="50" TextMode="SingleLine" runat="server" Wrap="false" />
                     <asp:Button ID="ButtonAddFolder" Text="Add" runat="server" OnClick="ButtonAddFolder_Click" CssClass="btn btn-primary btn-sm" />
                 </div>
                 </div>
@@ -644,7 +644,7 @@
              <div class="row">
     <div class="col-6">
    <input name="File1" type="file" class="form-control-file  form-control-sm" id="File1" runat="server"  accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"> </div>
-    <div class="col-6 text-right"><input type="button" class="btn btn-primary btn-sm" id="CmdUpload" value="Upload your files" runat="server"  onserverclick="UploadFile" /> </div>
+    <div class="col-6 text-end"><input type="button" class="btn btn-primary btn-sm" id="CmdUpload" value="Upload your files" runat="server"  onserverclick="UploadFile" /> </div>
                  </div>
             <hr />
             <h4>Sub Folders</h4>
@@ -658,7 +658,7 @@
             <asp:Label ID="txtNofiles" runat="server" />
             <div class="row mb-2">
                 <div class="col-12 col-sm-8"><asp:Label ID="PagingNav1" runat="server" /></div>
-                <div class="col-12 col-sm-4 text-right">  <a href="javascript:;" id="listmodeicons" title="View Icons"><i class="fas fa-image  fa-2x mr-2 text-secondary" aria-hidden="true"></i></a>  <a href="javascript:;" id="listmodelist" title="View List"><i class="fa fa-list fa-2x text-secondary" aria-hidden="true"></i></a></div>
+                <div class="col-12 col-sm-4 text-end">  <a href="javascript:;" id="listmodeicons" title="View Icons"><i class="fas fa-image  fa-2x me-2 text-secondary" aria-hidden="true"></i></a>  <a href="javascript:;" id="listmodelist" title="View List"><i class="fa fa-list fa-2x text-secondary" aria-hidden="true"></i></a></div>
                 </div>
                <div class="row bg-light pt-3 pb-3 mb-1 font-weight-bold <%= CheckListMode(false) %>" id="listmodeheader">
                             <div class="col-1"></div>
@@ -703,7 +703,7 @@
                         { %>
             <div class="alert alert-danger mt-5 text-center" role="alert">
   <p>If you would like to delete this folder and all its files, press the button below. This is not reversable.</p>
-                    <a href="Javascript:Folderconfirmation();" class="btn btn-danger btn-sm mt-3"><i class="fa fa-trash mr-3" aria-hidden="true"></i>Delete Folder</a>
+                    <a href="Javascript:Folderconfirmation();" class="btn btn-danger btn-sm mt-3"><i class="fa fa-trash me-3" aria-hidden="true"></i>Delete Folder</a>
 </div>
             
                     <% } %>
@@ -731,8 +731,8 @@
                     <div id="modalfileinfo"></div>
                 </div>
                 <div class="modal-footer">
-                    <a id="modaldelete" href="Javascript:;" class="mr-5  mr-auto" title="Delete File"><i class="fas fa-trash fa-3x text-danger"></i></a>
-                    <a id="modaldownload" href="Javascript:;" class="mr-5 mr-auto" title="Download File"><i class="fa fa-download fa-3x" aria-hidden="true"></i></a>
+                    <a id="modaldelete" href="Javascript:;" class="me-5  me-auto" title="Delete File"><i class="fas fa-trash fa-3x text-danger"></i></a>
+                    <a id="modaldownload" href="Javascript:;" class="me-5 me-auto" title="Download File"><i class="fa fa-download fa-3x" aria-hidden="true"></i></a>
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>

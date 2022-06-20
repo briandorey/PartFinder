@@ -96,15 +96,15 @@
                     <div class="col-12">
                         <h2>Step 1 - Add User</h2>
                         <p>Add a user account to access Part Finder</p>
-                        <div class="form-group">
+                        <div class="mb-3">
                             <label for="<%= EmailAddress.ClientID %>">Email address</label>
                             <asp:TextBox ID="EmailAddress" runat="server" CssClass="form-control" MaxLength="50" placeholder="Enter email"></asp:TextBox>
                         </div>
-                        <div class="form-group">
+                        <div class="mb-3">
                             <label for="<%= UserPass.ClientID %>">Password</label>
                             <asp:TextBox ID="UserPass" runat="server" CssClass="form-control" MaxLength="50" TextMode="Password" placeholder="Enter password"></asp:TextBox>
                         </div>
-                        <div class="form-group">
+                        <div class="mb-3">
                             <label for="<%= UserPass2.ClientID %>">Confirm Password</label>
                             <asp:TextBox ID="UserPass2" runat="server" CssClass="form-control" MaxLength="50" TextMode="Password" placeholder="Enter password"></asp:TextBox>
                         </div>

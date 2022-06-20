@@ -1,21 +1,4 @@
-﻿$(document).ready(function () {
-    // toggle sidebar when button clicked
-    $('.sidebar-toggle').on('click', function () {
-        $('.sidebar').toggleClass('toggled');
-    });
-
-    // auto-expand submenu if an item is active
-    var active = $('.sidebar .active');
-
-    if (active.length && active.parent('.collapse').length) {
-        var parent = active.parent('.collapse');
-
-        parent.prev('a').attr('aria-expanded', true);
-        parent.addClass('show');
-    }
-});
-
-function toggleWin(WinName) {
+﻿function toggleWin(WinName) {
     if (document.layers) {
         document.layers[WinName].visibility = iState ? "show" : "hide";
 
@@ -50,3 +33,21 @@ function DeleteConfirmation(filepath) {
         window.location = filepath;
     }
 }
+
+window.addEventListener('DOMContentLoaded', event => {
+
+    // Toggle the side navigation
+    const sidebarToggle = document.body.querySelector('#sidebarToggle');
+    if (sidebarToggle) {
+        // Uncomment Below to persist sidebar toggle between refreshes
+        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+        //     document.body.classList.toggle('sb-sidenav-toggled');
+        // }
+        sidebarToggle.addEventListener('click', event => {
+            event.preventDefault();
+            document.body.classList.toggle('sb-sidenav-toggled');
+            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+        });
+    }
+
+});

@@ -66,21 +66,21 @@
                 <div class="card-body">
                     <!-- start content -->
                     <asp:Literal ID="LitError" runat="server"></asp:Literal>
-                    <div class="form-group required">
+                    <div class="mb-3 required">
                         <label for="DefaultCountry">Parent Category</label>
                         <asp:DropDownList CssClass="form-control form-control-sm" ID="ParentCategory" runat="server"></asp:DropDownList>
                     </div>
-                    <div class="form-group required">
+                    <div class="mb-3 required">
                         <label for="<%= FCName.ClientID %>">Name</label>
                         <asp:TextBox ID="FCName" CssClass="form-control form-control-sm" runat="server" placeholder="Name" MaxLength="250" required></asp:TextBox>
                         <small id="FCNameHelp" class="form-text text-muted">The Footprint Categories are sorted by alphabetical order on the menus and website.</small>
                     </div>
-                    <div class="form-group">
+                    <div class="mb-3">
                         <label for="<%= FCDescription.ClientID %>">Description</label>
                         <asp:TextBox ID="FCDescription" CssClass="form-control form-control-sm" runat="server" MaxLength="250"></asp:TextBox>
                     </div>
 
-                    <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save mr-1"></i>Save</button>
+                    <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save me-1"></i>Save</button>
                     <!-- end content -->
                 </div>
             </div>

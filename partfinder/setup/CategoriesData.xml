@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+  <row PCpkey="2" ParentID="0" PCName="Active Components" PCDescription="" />
+  <row PCpkey="36" ParentID="10" PCName="Amplifiers &amp; Comparators" PCDescription="" />
+  <row PCpkey="41" ParentID="10" PCName="Audio Processing &amp; Control" PCDescription="" />
+  <row PCpkey="23" ParentID="4" PCName="Battery Holders" />
+  <row PCpkey="33" ParentID="5" PCName="Bearings" />
+  <row PCpkey="82" ParentID="73" PCName="Bipolar Transistors" PCDescription="" />
+  <row PCpkey="31" ParentID="5" PCName="Bolts" />
+  <row PCpkey="74" ParentID="68" PCName="Bridge Rectifier Diodes" PCDescription="" />
+  <row PCpkey="6" ParentID="0" PCName="Cables" />
+  <row PCpkey="14" ParentID="3" PCName="Capactiors" />
+  <row PCpkey="42" ParentID="10" PCName="Clock,Timing &amp; Frequency Management" PCDescription="" />
+  <row PCpkey="43" ParentID="10" PCName="CODECs / Encoders / Decoders" PCDescription="" />
+  <row PCpkey="92" ParentID="8" PCName="Communications &amp; Networking Modules" PCDescription="" />
+  <row PCpkey="44" ParentID="10" PCName="Configurable Mixed Signal ICs" PCDescription="" />
+  <row PCpkey="19" ParentID="4" PCName="Connectors" />
+  <row PCpkey="28" ParentID="5" PCName="Cooling" />
+  <row PCpkey="15" ParentID="3" PCName="Crystals, Oscillators &amp; Resonators" PCDescription="" />
+  <row PCpkey="75" ParentID="68" PCName="Current Regulator Diodes" PCDescription="" />
+  <row PCpkey="45" ParentID="10" PCName="Data &amp; Signal Conversion" PCDescription="" />
+  <row PCpkey="46" ParentID="10" PCName="Digital Potentiometers" PCDescription="" />
+  <row PCpkey="47" ParentID="10" PCName="Digital Signal Controllers - DSC" PCDescription="" />
+  <row PCpkey="48" ParentID="10" PCName="Digital Signal Processors - DSP" PCDescription="" />
+  <row PCpkey="68" ParentID="67" PCName="Diodes" PCDescription="" />
+  <row PCpkey="95" ParentID="11" PCName="Displays" PCDescription="" />
+  <row PCpkey="49" ParentID="10" PCName="Drivers &amp; Interfaces" PCDescription="" />
+  <row PCpkey="4" ParentID="0" PCName="Electromechanical Parts" />
+  <row PCpkey="69" ParentID="67" PCName="Electron Tubes" PCDescription="" />
+  <row PCpkey="76" ParentID="68" PCName="Fast Recovery Rectifier Diodes" PCDescription="" />
+  <row PCpkey="96" ParentID="11" PCName="Fibre Optic Components" PCDescription="" />
+  <row PCpkey="50" ParentID="10" PCName="Filters - Active" PCDescription="" />
+  <row PCpkey="51" ParentID="10" PCName="FPGAs" PCDescription="" />
+  <row PCpkey="22" ParentID="4" PCName="Fuses" />
+  <row PCpkey="52" ParentID="10" PCName="GALs / PALs &amp; SPLDs" PCDescription="" />
+  <row PCpkey="83" ParentID="73" PCName="IGBT Arrays &amp; Modules" PCDescription="" />
+  <row PCpkey="84" ParentID="73" PCName="IGBT Single Transistors" PCDescription="" />
+  <row PCpkey="18" ParentID="3" PCName="Inductors" />
+  <row PCpkey="97" ParentID="11" PCName="Infrared Emitters &amp; Receivers" PCDescription="" />
+  <row PCpkey="70" ParentID="67" PCName="Intelligent Power Modules" PCDescription="" />
+  <row PCpkey="93" ParentID="8" PCName="Interface Modules" PCDescription="" />
+  <row PCpkey="54" ParentID="10" PCName="Isolated Feedback Generators" PCDescription="" />
+  <row PCpkey="85" ParentID="73" PCName="JFET Transistors" PCDescription="" />
+  <row PCpkey="98" ParentID="11" PCName="Laser Components &amp; Modules" PCDescription="" />
+  <row PCpkey="100" ParentID="11" PCName="LED Accessories" PCDescription="" />
+  <row PCpkey="99" ParentID="11" PCName="LEDs" PCDescription="" />
+  <row PCpkey="35" ParentID="10" PCName="Logic" PCDescription="" />
+  <row PCpkey="5" ParentID="0" PCName="Mechanical Parts" />
+  <row PCpkey="55" ParentID="10" PCName="Memory" PCDescription="" />
+  <row PCpkey="56" ParentID="10" PCName="Memory Controllers" PCDescription="" />
+  <row PCpkey="27" ParentID="5" PCName="Mica Washers" />
+  <row PCpkey="57" ParentID="10" PCName="Microcontrollers - MCU" PCDescription="" />
+  <row PCpkey="58" ParentID="10" PCName="Microprocessors - MPU" PCDescription="" />
+  <row PCpkey="86" ParentID="73" PCName="Miscellaneous Transistors" PCDescription="" />
+  <row PCpkey="8" ParentID="0" PCName="Modules" />
+  <row PCpkey="87" ParentID="73" PCName="MOSFET Transistors" PCDescription="" />
+  <row PCpkey="25" ParentID="4" PCName="Motors" />
+  <row PCpkey="59" ParentID="10" PCName="Network Controllers" PCDescription="" />
+  <row PCpkey="30" ParentID="5" PCName="Nuts" />
+  <row PCpkey="101" ParentID="11" PCName="Optocouplers" PCDescription="" />
+  <row PCpkey="11" ParentID="0" PCName="Optoelectronics &amp; Displays" PCDescription="" />
+  <row PCpkey="9" ParentID="0" PCName="Other" />
+  <row PCpkey="12" ParentID="2" PCName="Others" />
+  <row PCpkey="3" ParentID="0" PCName="Passive Components" />
+  <row PCpkey="102" ParentID="11" PCName="Photodetectors &amp; Photointerrupters" PCDescription="" />
+  <row PCpkey="17" ParentID="3" PCName="Photoresistors" />
+  <row PCpkey="16" ParentID="3" PCName="Potentiometers" />
+  <row PCpkey="60" ParentID="10" PCName="Power Management ICs" PCDescription="" />
+  <row PCpkey="71" ParentID="67" PCName="Power Modules" PCDescription="" />
+  <row PCpkey="32" ParentID="5" PCName="Pullleys" />
+  <row PCpkey="21" ParentID="4" PCName="Relays" />
+  <row PCpkey="13" ParentID="3" PCName="Resistors" />
+  <row PCpkey="61" ParentID="10" PCName="RF" PCDescription="" />
+  <row PCpkey="77" ParentID="68" PCName="RF / Pin Diodes" PCDescription="" />
+  <row PCpkey="88" ParentID="73" PCName="RF FET Transistors" PCDescription="" />
+  <row PCpkey="91" ParentID="8" PCName="RF Modules" PCDescription="" />
+  <row PCpkey="89" ParentID="73" PCName="RF Transistors" PCDescription="" />
+  <row PCpkey="78" ParentID="68" PCName="Schottky Diodes" PCDescription="" />
+  <row PCpkey="29" ParentID="5" PCName="Screws" />
+  <row PCpkey="67" ParentID="2" PCName="Semiconductors - Discretes" PCDescription="" />
+  <row PCpkey="10" ParentID="2" PCName="Semiconductors - ICs" PCDescription="" />
+  <row PCpkey="53" ParentID="10" PCName="Sensor ICs" PCDescription="" />
+  <row PCpkey="79" ParentID="68" PCName="Small Signal Diodes" PCDescription="" />
+  <row PCpkey="34" ParentID="5" PCName="Spacers" />
+  <row PCpkey="7" ParentID="0" PCName="Speakers and Sounders" />
+  <row PCpkey="62" ParentID="10" PCName="Special Function" PCDescription="" />
+  <row PCpkey="80" ParentID="68" PCName="Standard Recovery Rectifier Diodes" PCDescription="" />
+  <row PCpkey="20" ParentID="4" PCName="Switches" />
+  <row PCpkey="63" ParentID="10" PCName="Switches, Multiplexers &amp; Demultiplexers" PCDescription="" />
+  <row PCpkey="72" ParentID="67" PCName="Thyristors" PCDescription="" />
+  <row PCpkey="64" ParentID="10" PCName="Touch Screen Controllers" PCDescription="" />
+  <row PCpkey="24" ParentID="4" PCName="Transformers" />
+  <row PCpkey="73" ParentID="67" PCName="Transistors" PCDescription="" />
+  <row PCpkey="65" ParentID="10" PCName="TV Tuners" PCDescription="" />
+  <row PCpkey="90" ParentID="73" PCName="Unijunction Transistors - UJT" PCDescription="" />
+  <row PCpkey="66" ParentID="10" PCName="Video Processing" PCDescription="" />
+  <row PCpkey="26" ParentID="5" PCName="Washers" />
+  <row PCpkey="81" ParentID="68" PCName="Zener Diodes" PCDescription="" />
+</data>

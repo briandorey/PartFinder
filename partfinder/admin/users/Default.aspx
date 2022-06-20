@@ -14,7 +14,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> 
     <div class="row mb-3">
         <div class="col-12 col-md-8"><p>The Users section allows you to manage the users of the website.</p></div>
-        <div class="col-12 col-md-4 text-right"></div>
+        <div class="col-12 col-md-4 text-end"></div>
       
     <div class="col-12 ">
     <div class="card mb-4">
@@ -33,7 +33,7 @@
                      CommandArgument="UserName">Email</asp:LinkButton></th>
                 <th><asp:LinkButton runat="server" ID="SortByPrice" CommandName="Sort"
                      CommandArgument="UserPass">Pass</asp:LinkButton></th>
-                <th class="text-right"></th>
+                <th class="text-end"></th>
             </tr>
          <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
    </LayoutTemplate>
@@ -41,7 +41,7 @@
            <tr>
                 <td><%#Eval("UserName") %></td>
                 <td>********</td>
-               <td class="text-right"><a href="edit.aspx?id=<%#Eval("UserPkey") %>" ><i class="fa fa-edit text-primary "></i></a></td>
+               <td class="text-end"><a href="edit.aspx?id=<%#Eval("UserPkey") %>" ><i class="fa fa-edit text-primary "></i></a></td>
             </tr>
         </ItemTemplate>
     </asp:ListView>

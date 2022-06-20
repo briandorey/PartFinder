@@ -140,40 +140,40 @@
                     <asp:Literal ID="LitError" runat="server"></asp:Literal>
                     <div class="row">
                         <div class="col-12 col-md-6">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= ManufacturerName.ClientID %>">Name</label>
                                 <asp:TextBox ID="ManufacturerName" CssClass="form-control form-control-sm" runat="server" placeholder="Enter name" MaxLength="250" required></asp:TextBox>
                             </div>
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= ManufacturerAddress.ClientID %>">Address</label>
                                 <asp:TextBox ID="ManufacturerAddress" CssClass="form-control form-control-sm" runat="server" MaxLength="250"></asp:TextBox>
                             </div>
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= ManufacturerURL.ClientID %>">URL</label>
                                 <asp:TextBox ID="ManufacturerURL" CssClass="form-control form-control-sm" runat="server" placeholder="https://" MaxLength="250"></asp:TextBox>
                             </div>
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= ManufacturerPhone.ClientID %>">Phone</label>
                                 <asp:TextBox ID="ManufacturerPhone" CssClass="form-control form-control-sm" runat="server" MaxLength="250"></asp:TextBox>
                             </div>
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= ManufacturerEmail.ClientID %>">Email</label>
                                 <asp:TextBox ID="ManufacturerEmail" CssClass="form-control form-control-sm" runat="server" MaxLength="250"></asp:TextBox>
                             </div>
 
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= ManufacturerLogo.ClientID %>">Logo</label>
                                 <div class="input-group">
 
                                     <asp:TextBox ID="ManufacturerLogo" CssClass="form-control " runat="server" MaxLength="250"></asp:TextBox>
                                     <div class="input-group-append">
-                                        <a href="javascript:ImageBrowser()" class="input-group-text bg-secondary text-white" id="inputGroupPrepend3"><i class="far fa-folder-open mr-2"></i>Open File Browser</a>
+                                        <a href="javascript:ImageBrowser()" class="input-group-text bg-secondary text-white" id="inputGroupPrepend3"><i class="far fa-folder-open me-2"></i>Open File Browser</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= ManufacturerComment.ClientID %>">Notes</label>
                                 <asp:TextBox ID="ManufacturerComment" CssClass="form-control form-control-sm" TextMode="MultiLine" Rows="10" runat="server"></asp:TextBox>
                             </div>
@@ -181,7 +181,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save mr-1"></i>Save</button>
+                            <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save me-1"></i>Save</button>
                         </div>
                     </div>
                     <!-- end content -->
@@ -200,7 +200,7 @@
                     <!-- start content -->
                     <asp:Panel ID="PanelDelete" runat="server">
                         <p>Are you sure you want to delete this item?</p>
-                        <a href="edit.aspx?id=<%= Helpers.QueryStringReturnNumber("id") %>&delete=true" id="Button2" class="btn btn-danger  btn-sm"><i class="fas fa-save mr-1"></i>Delete</a>
+                        <a href="edit.aspx?id=<%= Helpers.QueryStringReturnNumber("id") %>&delete=true" id="Button2" class="btn btn-danger  btn-sm"><i class="fas fa-save me-1"></i>Delete</a>
                     </asp:Panel>
                     <asp:Literal ID="LitDeleteMsg" runat="server"></asp:Literal>
                     <!-- end content -->

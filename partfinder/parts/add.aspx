@@ -97,71 +97,71 @@
             <div class="card mb-4">
                 <div class="card-header d-flex flex-row align-items-center justify-content-between">
                     <h4 class="card-title">Add New Part</h4>
-                    <a href="default.aspx" class="btn btn-outline-primary btn-sm"><i class="fas fa-list mr-1"></i>List</a>
+                    <a href="default.aspx" class="btn btn-outline-primary btn-sm"><i class="fas fa-list me-1"></i>List</a>
                 </div>
                 <div class="card-body">
                     <!-- start content -->
                     <asp:Literal ID="LitError" runat="server"></asp:Literal>
                     <div class="row">
                         <div class="col-12">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= PartName.ClientID %>">Part Name or Reference:</label>
                                 <asp:TextBox ID="PartName" CssClass="form-control form-control-sm" runat="server" placeholder="Name" MaxLength="250" required></asp:TextBox>
                                 <small id="PartNameHelp" class="form-text text-muted">Enter the Part Name or Reference of your part.</small>
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= PartDescription.ClientID %>">Description</label>
                                 <asp:TextBox ID="PartDescription" CssClass="form-control form-control-sm" runat="server"  MaxLength="250"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= PartCategoryID.ClientID %>">Category</label>
                                 <asp:DropDownList CssClass="form-control form-control-sm" ID="PartCategoryID" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= PartManID.ClientID %>">Manufacturer</label>
                                 <asp:DropDownList CssClass="form-control form-control-sm" ID="PartManID" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= Condition.ClientID %>">Condition</label>
                                 <asp:DropDownList CssClass="form-control form-control-sm" ID="Condition" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-12 col-md-3 required">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= StorageLocationID.ClientID %>">Storage Location</label>
                                 <asp:DropDownList CssClass="form-control form-control-sm" ID="StorageLocationID" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= PartFootprintID.ClientID %>">Footprint</label>
                                 <asp:DropDownList CssClass="form-control form-control-sm" ID="PartFootprintID" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= StockLevel.ClientID %>">Stock Level</label>
                                 <asp:TextBox ID="StockLevel" CssClass="form-control form-control-sm" runat="server" Text="0" MaxLength="10" required></asp:TextBox>
                                 <small id="StockLevelHelp" class="form-text text-muted">Number only.</small>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= MinStockLevel.ClientID %>">Minimum Stock Level</label>
                                 <asp:TextBox ID="MinStockLevel" CssClass="form-control form-control-sm" runat="server"  Text="0"  MaxLength="10" required></asp:TextBox>
                                 <small id="MinStockLevelHelp" class="form-text text-muted">Number only.</small>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= Price.ClientID %>">Price Each</label>
                                 <asp:TextBox ID="Price" CssClass="form-control form-control-sm" runat="server"  Text="0" MaxLength="10" required></asp:TextBox>
                                 <small id="PriceHelp" class="form-text text-muted">Number only.</small>
@@ -169,25 +169,25 @@
                         </div>
                         
                         <div class="col-12 col-md-6">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= BarCode.ClientID %>">BarCode</label>
                                 <asp:TextBox ID="BarCode" CssClass="form-control form-control-sm" runat="server"  MaxLength="50"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= MPN.ClientID %>">MPN</label>
                                 <asp:TextBox ID="MPN" CssClass="form-control form-control-sm" runat="server" MaxLength="250"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= PartComment.ClientID %>">Notes</label>
                                 <asp:TextBox ID="PartComment" CssClass="form-control form-control-sm" runat="server" TextMode="MultiLine" Rows="3"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-12">
-                            <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save mr-1"></i>Save</button></div>
+                            <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save me-1"></i>Save</button></div>
                     </div>
                     <!-- end content -->
                 </div>

@@ -14,7 +14,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> 
     <div class="row mb-3">
         <div class="col-12 col-md-8"><p>The Footprint section allows you to manage the footprints for parts.</p></div>
-        <div class="col-12 col-md-4 text-right"></div>
+        <div class="col-12 col-md-4 text-end"></div>
       
     <div class="col-12 ">
     <div class="card mb-4">
@@ -37,7 +37,7 @@
                      CommandArgument="FCName">Category</asp:LinkButton></th>
                  <th><asp:LinkButton runat="server" ID="LinkButton1" CommandName="Sort"
                      CommandArgument="FootprintImage">Image</asp:LinkButton></th>
-                <th class="text-right"></th>
+                <th class="text-end"></th>
             </tr>
          <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
    </LayoutTemplate>
@@ -47,7 +47,7 @@
                 <td><%#Eval("FCName") %></td>
                <td><%#Eval("FootprintImage") %></td>
                
-               <td class="text-right"><a href="edit.aspx?id=<%#Eval("FootprintPkey") %>" ><i class="fa fa-edit text-primary fa-1x "></i></a></td>
+               <td class="text-end"><a href="edit.aspx?id=<%#Eval("FootprintPkey") %>" ><i class="fa fa-edit text-primary fa-1x "></i></a></td>
             </tr>
         </ItemTemplate>
     </asp:ListView>

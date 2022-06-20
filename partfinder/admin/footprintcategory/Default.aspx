@@ -14,14 +14,14 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> 
     <div class="row mb-3">
         <div class="col-12 col-md-8"><p>The Footprint Categories section allows you to manage the footprint categories for parts.</p></div>
-        <div class="col-12 col-md-4 text-right"></div>
+        <div class="col-12 col-md-4 text-end"></div>
       
     <div class="col-12 ">
     <div class="card mb-4">
               <div class="card-header d-flex flex-row align-items-center justify-content-between">
                   <h4 class="card-title">Footprint Categories</h4>
                     <div>
-                  <a href="treeview.aspx" class=" mr-3" title="Tree View"><i class="fas fa-stream mr-1"></i></a>
+                  <a href="treeview.aspx" class=" me-3" title="Tree View"><i class="fas fa-stream me-1"></i></a>
                     <a href="add.aspx" title="Add new"><i class="fas fa-plus"></i></a>
                         </div>
                 </div>
@@ -36,7 +36,7 @@
                      CommandArgument="FCName">Name</asp:LinkButton></th>
                 <th><asp:LinkButton runat="server" ID="SortByPrice" CommandName="Sort"
                      CommandArgument="FCDescription">Description</asp:LinkButton></th>
-                <th class="text-right"></th>
+                <th class="text-end"></th>
             </tr>
          <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
    </LayoutTemplate>
@@ -44,7 +44,7 @@
            <tr>
                 <td><%#Eval("FCName") %></td>
                 <td><%#Eval("FCDescription") %></td>
-               <td class="text-right"><a href="edit.aspx?id=<%#Eval("FCPkey") %>" ><i class="fa fa-edit text-primary "></i></a></td>
+               <td class="text-end"><a href="edit.aspx?id=<%#Eval("FCPkey") %>" ><i class="fa fa-edit text-primary "></i></a></td>
             </tr>
         </ItemTemplate>
     </asp:ListView>

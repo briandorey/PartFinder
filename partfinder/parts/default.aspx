@@ -74,7 +74,7 @@
         </div>
         <div class="col-12 col-md-8 col-xl-9"> 
              
-           <div class="text-right mb-3"><a href="export.aspx" class="mr-3" title="Export"><i class="fas fa-file-csv mr-1"></i></a><a href="list.aspx" class="mr-3" title="List View"><i class="fas fa-stream mr-1"></i></a><a id="addlink" href="add.aspx" title="Add new"><i class="fa fa-plus mr-2"></i></a></div>
+           <div class="text-end mb-3"><a href="export.aspx" class="me-3" title="Export"><i class="fas fa-file-csv me-1"></i></a><a href="list.aspx" class="me-3" title="List View"><i class="fas fa-stream me-1"></i></a><a id="addlink" href="add.aspx" title="Add new"><i class="fa fa-plus me-2"></i></a></div>
            <div class="card  mb-4">
                 <div id="tables">
                     
@@ -127,7 +127,7 @@
                         strdata += '<td>' + value.StorageName + '</td>';
                         strdata += '<td>' + value.ManufacturerName + '</td>';
                         strdata += '<td>' + value.FootprintName + '</td>';
-                        strdata += '<td class="text-right"><a href="/parts/view.aspx?id=' + value.PartPkey + '" ><i class="fa fa-search text-primary fa-1x "></i></a></td>';
+                        strdata += '<td class="text-end"><a href="/parts/view.aspx?id=' + value.PartPkey + '" ><i class="fa fa-search text-primary fa-1x "></i></a></td>';
                         strdata += '</tr>';
                     })
 

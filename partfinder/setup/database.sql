@@ -570,3 +570,33 @@ INSERT INTO Footprint (FootprintPkey, FootprintName,FootprintDescription, Footpr
 GO
 SET IDENTITY_INSERT Footprint OFF
 GO
+SET IDENTITY_INSERT [dbo].[Manufacturer] ON 
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (1, N'Microchip / Amtel', N'', N'https://www.microchip.com/', N'123456', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (5, N'Other', N'', N'', N'', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (6, N'ADI (Analog Devices Inc.)', N'', N'https://www.analog.com/en/index.html', N'', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (7, N'NXP Semiconductors ', N'', N'https://www.nxp.com/', N'', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (8, N'Maxim Integrated ', N'', N'https://www.maximintegrated.com/en.html', N'', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (9, N'Linear Technology / Analog Devices ', N'', N'', N'', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (10, N'STMicroelectronics ', N'', N'https://www.st.com/content/st_com/en.html', N'', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (11, N'Texas Instruments ', N'', N'http://www.ti.com/', N'', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (12, N'Vishay ', N'', N'', N'', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (14, N'Arduino', N'', N'', N'', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (15, N'National Semiconductor', N'', N'', N'', N'', N'', N'Acquired by Texas Instruments')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (16, N'Samsung', N'', N'', N'', N'', N'', N'')
+GO
+INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (17, N'Cypress', N'', N'', N'', N'', N'', N'')
+GO
+SET IDENTITY_INSERT [dbo].[Manufacturer] OFF
+GO

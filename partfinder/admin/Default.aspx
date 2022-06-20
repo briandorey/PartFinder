@@ -18,10 +18,10 @@
               <div class="card border-left-primary  h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-primary text-uppercase mb-4">User Management</div>
-                      <div class="h5 mb-4"><a href="/admin/users/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-users mr-3"></i>List Users</a></div>
-                        <div class="h5 mb-0"><a href="/admin/users/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-user-plus mr-3"></i>Add User</a></div>
+                    <div class="col me-2">
+                      <div class="text-uppercase mb-4">User Management</div>
+                      <div class="mb-4"><a href="/admin/users/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-users me-3"></i>List Users</a></div>
+                        <div class=" mb-0"><a href="/admin/users/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-user-plus me-3"></i>Add User</a></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -36,10 +36,10 @@
               <div class="card border-left-success  h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class=" text-success text-uppercase mb-4">Category Management</div>
-                      <div class="h5 mb-4"><a href="/admin/category/treeview.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder mr-3"></i>List Categories</a></div>
-                        <div class="h5 mb-0"><a href="/admin/category/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder-plus mr-3"></i>Add Category</a></div>
+                    <div class="col me-2">
+                      <div class="text-uppercase mb-4">Category Management</div>
+                      <div class=" mb-4"><a href="/admin/category/treeview.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder me-3"></i>List Categories</a></div>
+                        <div class=" mb-0"><a href="/admin/category/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder-plus me-3"></i>Add Category</a></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-folder fa-2x text-gray-300"></i>
@@ -55,10 +55,10 @@
               <div class="card border-left-secondary  h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class=" text-secondary text-uppercase mb-4">Footprint Category Management</div>
-                      <div class="h5 mb-4"><a href="/admin/footprintcategory/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder mr-3"></i>List Footprint Categories</a></div>
-                        <div class="h5 mb-0"><a href="/admin/footprintcategory/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder-plus mr-3"></i>Add Footprint Category</a></div>
+                    <div class="col me-2">
+                      <div class=" text-uppercase mb-4">Footprint Category Management</div>
+                      <div class=" mb-4"><a href="/admin/footprintcategory/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder me-3"></i>List Footprint Categories</a></div>
+                        <div class=" mb-0"><a href="/admin/footprintcategory/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder-plus me-3"></i>Add Footprint Category</a></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-shoe-prints fa-2x text-gray-300"></i>
@@ -74,10 +74,10 @@
               <div class="card border-left-warning  h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class=" text-warning text-uppercase mb-4">Footprint Management</div>
-                      <div class="h5 mb-4"><a href="/admin/footprints/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder mr-3"></i>List Footprints</a></div>
-                        <div class="h5 mb-0"><a href="/admin/footprints/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder-plus mr-3"></i>Add Footprint</a></div>
+                    <div class="col me-2">
+                      <div class="text-uppercase mb-4">Footprint Management</div>
+                      <div class=" mb-4"><a href="/admin/footprints/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder me-3"></i>List Footprints</a></div>
+                        <div class=" mb-0"><a href="/admin/footprints/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder-plus me-3"></i>Add Footprint</a></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-shoe-prints fa-2x text-gray-300"></i>
@@ -92,10 +92,10 @@
               <div class="card border-left-info  h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class=" text-info text-uppercase mb-4">Storage Locations Management</div>
-                      <div class="h5 mb-4"><a href="/admin/storagelocations/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder mr-3"></i>List Storage Locations</a></div>
-                        <div class="h5 mb-0"><a href="/admin/storagelocations/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder-plus mr-3"></i>Add Storage Location</a></div>
+                    <div class="col me-2">
+                      <div class="text-uppercase mb-4">Storage Locations Management</div>
+                      <div class=" mb-4"><a href="/admin/storagelocations/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder me-3"></i>List Storage Locations</a></div>
+                        <div class=" mb-0"><a href="/admin/storagelocations/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder-plus me-3"></i>Add Storage Location</a></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-box fa-2x text-gray-300"></i>
@@ -110,10 +110,10 @@
               <div class="card border-left-primary  h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class=" text-primary text-uppercase mb-4">Manufacturers Management</div>
-                      <div class="h5 mb-4"><a href="/admin/manufacturers/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder mr-3"></i>List Manufacturers</a></div>
-                        <div class="h5 mb-0"><a href="/admin/manufacturers/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder-plus mr-3"></i>Add Manufacturer</a></div>
+                    <div class="col me-2">
+                      <div class="text-uppercase mb-4">Manufacturers Management</div>
+                      <div class=" mb-4"><a href="/admin/manufacturers/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder me-3"></i>List Manufacturers</a></div>
+                        <div class=" mb-0"><a href="/admin/manufacturers/add.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder-plus me-3"></i>Add Manufacturer</a></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-industry fa-2x text-gray-300"></i>
@@ -128,9 +128,9 @@
               <div class="card border-left-danger  h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class=" text-danger text-uppercase mb-4">File Manager</div>
-                      <div class="h5 mb-4"><a href="/admin/files/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder mr-3"></i>Manage Files and Folders</a></div>
+                    <div class="col me-2">
+                      <div class="text-uppercase mb-4">File Manager</div>
+                      <div class=" mb-4"><a href="/admin/files/default.aspx" class="text-gray-800"> <i class="fa fa-fw fa-folder me-3"></i>Manage Files and Folders</a></div>
                      
                     </div>
                     <div class="col-auto">

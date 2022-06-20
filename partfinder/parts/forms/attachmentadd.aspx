@@ -1,4 +1,4 @@
-<%@ Page Language="C#" %>
+﻿<%@ Page Language="C#" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Import Namespace="System.IO" %>
@@ -173,7 +173,8 @@
     <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="/css/layout.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/custom.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -189,7 +190,7 @@
                     <asp:Literal ID="LitError" runat="server"></asp:Literal>
                    
           
-                    <div class="form-group">
+                    <div class="mb-3">
                         <label for="File1">Choose file</label>
                      
                        <input name="File1" type="file" class="form-control form-control-sm" id="File1" runat="server"  accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf" required> 
@@ -198,12 +199,12 @@
 
                     </div>
                   
-                    <div class="form-group">
+                    <div class="mb-3">
                         <label for="<%= DisplayName.ClientID %>">Display Name</label>
                         <asp:TextBox ID="DisplayName" CssClass="form-control form-control-sm" runat="server" MaxLength="250" required></asp:TextBox>
                     </div>
 
-                    <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save mr-1"></i>Save</button>
+                    <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save me-1"></i>Save</button>
                     <!-- end content -->
                </div>
     </div>

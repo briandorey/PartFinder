@@ -101,22 +101,22 @@
                     <p>This page allows you to quickly create a grid of folder locations in the format "prefixA1" using the number of rows and columns you require.</p>
                     <!-- start content -->
                     <asp:Literal ID="LitError" runat="server"></asp:Literal>
-                    <div class="form-group required">
+                    <div class="mb-3 required">
                         <label for="<%= PrefixName.ClientID %>">Prefix:</label>
                         <asp:TextBox ID="PrefixName" CssClass="form-control form-control-sm" runat="server" placeholder="tray-" MaxLength="50"></asp:TextBox>
                     </div>
-                    <div class="form-group required">
+                    <div class="mb-3 required">
                         <label for="<%= GridColumns.ClientID %>">Number of Columns:</label>
                         <asp:DropDownList ID="GridColumns" runat="server" CssClass="form-control form-control-sm"></asp:DropDownList>
                     </div>
-                    <div class="form-group required">
+                    <div class="mb-3 required">
                         <label for="<%= GridRows.ClientID %>">Number of Rows:</label>
                         <asp:TextBox ID="GridRows" CssClass="form-control form-control-sm" runat="server" Text="5" MaxLength="50" required></asp:TextBox>
                         <small id="GridRowsXHelp" class="form-text text-muted">Must contain a number between 1 and 100.</small>
                        
                     </div>
 
-                    <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save mr-1"></i>Generate Storage Locations</button>
+                    <button runat="server" id="Button1" class="btn btn-primary "><i class="fas fa-save me-1"></i>Generate Storage Locations</button>
                     <div class="alert alert-success mt-3" role="alert" id="AlertMessage">
   Please select the number of columns you require and enter the number of rows.
 </div>

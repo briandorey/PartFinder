@@ -1,18 +1,24 @@
-<%@ Page Language="C#" EnableSessionState="true" %>
+﻿<%@ Page Language="C#" EnableSessionState="true" %>
 
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <script runat="server">
     protected void Page_Load(object sender, EventArgs e)
     {
+
         if (!IsPostBack)
         {
+
             CategoryHelpers nav = new CategoryHelpers();
             nav.LoadCatMenu(PartCategoryID);
+
             PartHelpers fph = new PartHelpers();
             fph.LoadMenu(PartFootprintID, PartManID, StorageLocationID);
+
             Condition.Items.Add(new ListItem("New", "1"));
             Condition.Items.Add(new ListItem("Used", "0"));
+
+
             int pkey = Helpers.QueryStringReturnNumber("id");
             if (pkey > 0)
             {
@@ -40,12 +46,14 @@
                                 StorageLocationID.SelectedIndex = StorageLocationID.Items.IndexOf(StorageLocationID.Items.FindByValue(dt.Rows[0]["StorageLocationID"].ToString()));
                                 MPN.Text = dt.Rows[0]["MPN"].ToString();
                                 BarCode.Text = dt.Rows[0]["BarCode"].ToString();
+
                                 Session["CurrentStockLevel"] = dt.Rows[0]["StockLevel"].ToString();
                             }
                             else
                             {
                                 Response.Redirect("/error.aspx?mode=notfound");
                             }
+
                         }
                     }
                 }
@@ -59,6 +67,7 @@
         {
             string ErrorMessage = "";
             bool DoSave = true;
+
             if (Helpers.TextBoxIsNull(PartName))
             {
                 DoSave = false;
@@ -74,11 +83,15 @@
                 DoSave = false;
                 ErrorMessage += "<p>Please enter the stock level as a number.</p>";
             }
+
             if (Helpers.TextBoxIsNull(MinStockLevel))
             {
                 DoSave = false;
                 ErrorMessage += "<p>Please enter your minimum stock level.</p>";
             }
+
+
+
             if (DoSave)
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MainConn"].ConnectionString.ToString()))
@@ -103,6 +116,7 @@
                         cmd.Parameters.AddWithValue("@PartPkey", Helpers.QueryStringReturnNumber("id"));
                         cmd.ExecuteNonQuery();
                     }
+
                     if (Session["CurrentStockLevel"] != null && Session["CurrentStockLevel"].ToString().Length > 0)
                     {
                         // check old and new stock levels are both numbers.
@@ -111,23 +125,25 @@
                         res = int.TryParse(Session["CurrentStockLevel"].ToString(), out IntOldStockLevel);
                         int NewOldStockLevel;
                         res2 = int.TryParse(StockLevel.Text.ToString(), out NewOldStockLevel);
+
                         if (res  && res2)
                         {
                             if (IntOldStockLevel != NewOldStockLevel)
                             {
                                 // stock level has changed, save into history table.
-                                using (SqlCommand cmd = new SqlCommand("INSERT INTO PartStockLevelHistory ([PartPkey] ,[StockLevel] ,[DateChanged], [Name]) VALUES (@PartPkey ,@StockLevel, @DateChanged, @Name)", conn))
+
+                                using (SqlCommand cmd = new SqlCommand("INSERT INTO PartStockLevelHistory ([PartPkey] ,[StockLevel] ,[DateChanged]) VALUES (@PartPkey ,@StockLevel, @DateChanged)", conn))
                                 {
                                     cmd.Parameters.AddWithValue("@PartPkey", Helpers.QueryStringReturnNumber("id"));
                                     cmd.Parameters.AddWithValue("@StockLevel", StockLevel.Text);
                                     cmd.Parameters.AddWithValue("@DateChanged", DateTime.Now);
-                                    cmd.Parameters.AddWithValue("@Name", HttpContext.Current.Request.ServerVariables["LOGON_USER"]);
                                     cmd.ExecuteNonQuery();
                                 }
                             }
                         }
                     }
                 }
+
                 Helpers.DoLog("Part Updated: " + PartName.Text);
                 Response.Redirect("done.aspx?mode=update");
             }
@@ -136,6 +152,7 @@
                 LitError.Text = "<div class=\"alert alert-danger\" role=\"alert\">" + ErrorMessage + "</div>";
             }
         }
+
         if (Request.QueryString["delete"] != null)
         {
             int pkey = Helpers.QueryStringReturnNumber("id");
@@ -156,6 +173,7 @@
                                 string FolderManName = dt.Rows[0]["ManufacturerName"].ToString().ToLower().Replace(" ","-").CleanString();
                                 string FolderPartName = dt.Rows[0]["PartPkey"].ToString().ToLower().Replace(" ","-").CleanString();
                                 // check if directory exists
+
                                 bool exists = System.IO.Directory.Exists(Server.MapPath("\\docs\\" + FolderManName + "\\" + FolderPartName));
                                 if (exists)
                                 {
@@ -204,7 +222,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="/css/layout.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/custom.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -213,65 +232,65 @@
                     <asp:Literal ID="LitError" runat="server"></asp:Literal>
                     <div class="row">
                         <div class="col-12">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= PartName.ClientID %>">Part Name or Reference:</label>
                                 <asp:TextBox ID="PartName" CssClass="form-control form-control-sm" runat="server" placeholder="Name" MaxLength="250" required></asp:TextBox>
                                 <small id="PartNameHelp" class="form-text text-muted">Enter the Part Name or Reference of your part.</small>
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= PartDescription.ClientID %>">Description</label>
                                 <asp:TextBox ID="PartDescription" CssClass="form-control form-control-sm" runat="server"  MaxLength="250"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-12 required">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= PartCategoryID.ClientID %>">Category</label>
                                 <asp:DropDownList CssClass="form-control form-control-sm" ID="PartCategoryID" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= PartManID.ClientID %>">Manufacturer</label>
                                 <asp:DropDownList CssClass="form-control form-control-sm" ID="PartManID" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= Condition.ClientID %>">Condition</label>
                                 <asp:DropDownList CssClass="form-control form-control-sm" ID="Condition" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-12 col-md-3 required">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= StorageLocationID.ClientID %>">Storage Location</label>
                                 <asp:DropDownList CssClass="form-control form-control-sm" ID="StorageLocationID" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         
                         <div class="col-12 col-md-3">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= PartFootprintID.ClientID %>">Footprint</label>
                                 <asp:DropDownList CssClass="form-control form-control-sm" ID="PartFootprintID" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= StockLevel.ClientID %>">Stock Level</label>
                                 <asp:TextBox ID="StockLevel" CssClass="form-control form-control-sm" runat="server" Text="0" MaxLength="10" required></asp:TextBox>
                                 <small id="StockLevelHelp" class="form-text text-muted">Number only.</small>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= MinStockLevel.ClientID %>">Minimum Stock Level</label>
                                 <asp:TextBox ID="MinStockLevel" CssClass="form-control form-control-sm" runat="server"  Text="0"  MaxLength="10" required></asp:TextBox>
                                 <small id="MinStockLevelHelp" class="form-text text-muted">Number only.</small>
                             </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <div class="form-group required">
+                            <div class="mb-3 required">
                                 <label for="<%= Price.ClientID %>">Price Each</label>
                                 <asp:TextBox ID="Price" CssClass="form-control form-control-sm" runat="server"  Text="0" MaxLength="10" required></asp:TextBox>
                                 <small id="PriceHelp" class="form-text text-muted">Number only.</small>
@@ -279,19 +298,19 @@
                         </div>
                         
                         <div class="col-12 col-md-6">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= BarCode.ClientID %>">BarCode</label>
                                 <asp:TextBox ID="BarCode" CssClass="form-control form-control-sm" runat="server"  MaxLength="50"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= MPN.ClientID %>">MPN</label>
                                 <asp:TextBox ID="MPN" CssClass="form-control form-control-sm" runat="server" MaxLength="250"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="<%= PartComment.ClientID %>">Notes</label>
                                 <asp:TextBox ID="PartComment" CssClass="form-control form-control-sm" runat="server" TextMode="MultiLine" Rows="3"></asp:TextBox>
                             </div>

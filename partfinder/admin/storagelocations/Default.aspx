@@ -14,7 +14,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> 
     <div class="row mb-3">
         <div class="col-12 col-md-8"><p>The Storage Locations section allows you to manage the locations where your items are stored.</p></div>
-        <div class="col-12 col-md-4 text-right"></div>
+        <div class="col-12 col-md-4 text-end"></div>
       
     <div class="col-12 ">
     <div class="card shadow mb-4">
@@ -34,7 +34,7 @@
                <th><asp:LinkButton runat="server" ID="LinkButton1" CommandName="Sort"
                      CommandArgument="StorageSortOrder">Order</asp:LinkButton></th>
                 
-                <th class="text-right"></th>
+                <th class="text-end"></th>
             </tr>
          <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
    </LayoutTemplate>
@@ -43,7 +43,7 @@
                 <td><%#Eval("StorageName") %></td>
                <td><%#Eval("StorageSortOrder") %></td>
               
-               <td class="text-right"><a href="edit.aspx?id=<%#Eval("StoragePkey") %>" ><i class="fa fa-edit text-primary fa-1x "></i></a></td>
+               <td class="text-end"><a href="edit.aspx?id=<%#Eval("StoragePkey") %>" ><i class="fa fa-edit text-primary fa-1x "></i></a></td>
             </tr>
         </ItemTemplate>
     </asp:ListView>

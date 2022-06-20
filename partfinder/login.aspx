@@ -92,7 +92,8 @@
     <title>Part Finder - Sign In</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="/css/layout.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/custom.css" rel="stylesheet" />
     <style>
         html,
         body {
@@ -172,7 +173,7 @@
         <asp:TextBox ID="InputEmail" runat="server" CssClass="form-control form-control-sm" placeholder="Email address" required></asp:TextBox>
         <label for="<%= InputPassword.ClientID %>" class="sr-only">Password</label>
         <asp:TextBox ID="InputPassword" runat="server" TextMode="Password" CssClass="form-control form-control-sm" required placeholder="Password"></asp:TextBox>
-        <div class="form-group">
+        <div class="mb-3">
             <div class="checkbox">
                 <label class="btn btn-default">
                     <asp:CheckBox ID="CheckBoxRemember" runat="server" Text="Remember me" />
