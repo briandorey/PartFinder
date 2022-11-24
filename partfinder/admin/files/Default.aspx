@@ -89,7 +89,7 @@
 
         var sbtree = new StringBuilder();
 
-        ListDirectories(Server.MapPath("/docs"), sbtree, BasePath);
+        ListDirectories(Server.MapPath("/docs") + FullUrl, sbtree, BasePath);
         foldertree.Text = sbtree.ToString();
        
     }
@@ -344,36 +344,9 @@
                 return "/docs" + FileName;
             }
         }
-        if (FileName.ToLower().EndsWith("svg"))
-        {
-            return "/docs" + FileName;
-        }
-        if (FileName.ToLower().EndsWith("doc") || FileName.ToLower().EndsWith("docx"))
-        {
-            return "//images/file-word.svg";
-        }
-        if (FileName.ToLower().EndsWith("xls") || FileName.ToLower().EndsWith("xlsx"))
-        {
-            return "//images/file-excel.svg";
-        }
-        if (FileName.ToLower().EndsWith("txt") || FileName.ToLower().EndsWith("py"))
-        {
-            return "//images/file-code.svg";
-        }
-        if (FileName.ToLower().EndsWith("zip") || FileName.ToLower().EndsWith("rar"))
-        {
-            return "//images/archive.svg";
-        }
-        if (FileName.ToLower().EndsWith("pdf"))
-        {
-            return "//images/file-pdf.svg";
-        }
-        if (FileName.ToLower().EndsWith("mpg") || FileName.ToLower().EndsWith("mp4"))
-        {
-            return "//images/file-video.svg";
-        }
+       
 
-        return "//images/file-alt.svg";
+        return "/img/file.svg";
 
     }
 
@@ -498,7 +471,9 @@
                     else
                     {
                         // check for file type
-                        if ((FfileExt == "swf") || (FfileExt == "jpg") || (FfileExt == "gif") || (FfileExt == "doc") || (FfileExt == "zip") || (FfileExt == "pdf") || (FfileExt == "xls") || (FfileExt == "ppt") || (FfileExt == "txt") || (FfileExt == "avi") || (FfileExt == "mpg") || (FfileExt == "mov") || (FfileExt == "png") || (FfileExt == "mp3"))
+                        if ((FfileExt == "swf") || (FfileExt == "jpg") || (FfileExt == "gif") || (FfileExt == "doc") || (FfileExt == "zip") || (FfileExt == "pdf") || (FfileExt == "xls") || (FfileExt == "ppt") || (FfileExt == "txt") || (FfileExt == "avi") || (FfileExt == "mpg") || (FfileExt == "mov") || (FfileExt == "png") || (FfileExt == "mp3") || (FfileExt == "xlsx") || (FfileExt == "docx"))
+
+                            
                         {
                             //file is ok
                         }
@@ -724,7 +699,7 @@
                 </div>
                 <div class="modal-body">
                     <p class="text-center">
-                        <img id="modalimage" class="img-fluid" src="//images/folder.svg" style="min-height: 200px; max-height: 300px; max-width: 400px;" /></p>
+                        <img id="modalimage" class="img-fluid" src="//img/folder.svg" style="min-height: 200px; max-height: 300px; max-width: 400px;" /></p>
                     <h4 id="modalname">Name: </h4>
                     <p id="modalsize">Size: </p>
                     <p id="modaldate">Date: </p>
@@ -831,56 +806,7 @@
               $('#myModal').modal('show');
           }
 
-
-
-          var plusIcon = "<i class=\"fa fa-plus tree-expand\" aria-hidden=\"true\" />"
-
-          function TreeView(rootElement, openPath) {
-              // find all folders with sub folders and add plus arrows for toggling expansion
-
-              if (openPath.length > 1) {
-                  openPath = openPath.substring(1, openPath.length);
-                  // alert(openPath);
-              }
-
-              $(rootElement).find("li").each(function () {
-                  if ($(this).children("ul").length > 0) {
-                      $(this).prepend(plusIcon);
-                      $(this).children(".tree-expand").click(function () {
-                          $(this).parent().children("ul").slideToggle("fast", function () {
-                              // Animation complete.
-                              if ($(this).parent().children("ul").is(":visible")) {
-                                  $(this).parent().find("i").first().removeClass("fa-plus").addClass("fa-minus");
-                              }
-                              else {
-                                  $(this).parent().find("i").first().removeClass("fa-minus").addClass("fa-plus");
-                                  //$(this).parentsUntil("#treeview").replaceClass('fa-minus', 'fa-plus');
-                              }
-                          });
-                      });
-
-
-                  }
-                  if (openPath.length > 1) {
-
-                      if ($(this).children("a").attr("data") == openPath) {
-                          $(this).parentsUntil("#treeview").children("ul").show(0, function () {
-                              $(this).parent().find("i").first().removeClass("fa-plus").addClass("fa-minus");
-                          });
-                      }
-                  }
-              });
-
-              // add click event to all a tags
-              $(rootElement).find("a").each(function () {
-                  $(this).click(function () {
-                      // alert($(this).attr("data"));
-                  });
-              });
-
-          }
-        TreeView("#treeview", '<%=  HttpUtility.JavaScriptStringEncode(FullUrl) %>');
-
+         
     </script>
 
     <style>
@@ -891,7 +817,7 @@
         
 
         #treeview ul{list-style:none; margin:0 0 0 0; padding:0;}
-        #treeview ul ul{margin:5px 0 0 20px; display:none;}
+        #treeview ul ul{margin:5px 0 0 5px; }
         #treeview li{display:block; margin:0 0 5px 10px; width:auto;}
         #treeview ul ul li{margin-left:2px;}
     </style>

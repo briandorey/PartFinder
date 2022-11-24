@@ -10,7 +10,7 @@ public class upload : IHttpHandler {
         context.Response.ContentType = "text/plain";
         context.Response.Expires = -1;
 
-        string[] allowedFileTypes = { "swf", "jpg", "gif", "doc", "docx", "zip", "pdf", "xls", "ppt", "txt", "mpg", "png", "mp3", "svg" };
+        string[] allowedFileTypes = { "swf", "jpg", "gif", "doc", "docx", "zip", "pdf", "xls", "ppt", "txt", "mpg", "png", "mp3", "svg","xlsx", "docx" };
         try
         {
             string ID = context.Request.QueryString["d"];

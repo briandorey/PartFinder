@@ -598,5 +598,10 @@ INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress],
 GO
 INSERT [dbo].[Manufacturer] ([mpkey], [ManufacturerName], [ManufacturerAddress], [ManufacturerURL], [ManufacturerPhone], [ManufacturerEmail], [ManufacturerLogo], [ManufacturerComment]) VALUES (17, N'Cypress', N'', N'', N'', N'', N'', N'')
 GO
+
+
 SET IDENTITY_INSERT [dbo].[Manufacturer] OFF
+GO
+
+INSERT INTO [dbo].[StorageLocation] ([StorageName] ,[StorageSortOrder]) VALUES ('Default',1)
 GO

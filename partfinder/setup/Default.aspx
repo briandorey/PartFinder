@@ -77,8 +77,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Brian Dorey www.briandorey.com">
     <title>Part Finder Setup</title>
-    <link href="/css/layout.min.css" rel="stylesheet">
-    <link href="/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/styles.css" rel="stylesheet">
 </head>
 <body>
     <form id="form1" runat="server">
